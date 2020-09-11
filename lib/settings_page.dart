@@ -14,6 +14,10 @@ class SettingsPage extends StatelessWidget {
       physics: NeverScrollableScrollPhysics(),
       padding: EdgeInsets.all(8),
       children: [
+        ListTile(
+          title: Text('The design is intend to be responsive'),
+          subtitle: Text('Launch the demo on a desktop web browser, change window width, or enable device preview'),
+        ),
         _SlowAnimationTile(),
         _DevicePreviewTile(),
       ],
