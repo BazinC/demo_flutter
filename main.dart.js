@@ -58026,7 +58026,7 @@ $iaiC:1,
 gaz:function(a){return this.b}}
 Q.a9i.prototype={}
 S.IJ.prototype={
-B:function(a,b){var s=null,r=L.bn("The design is intend to be responsive",s,s,s,s,s)
+B:function(a,b){var s=null,r=L.bn("The design is intended to be responsive",s,s,s,s,s)
 return B.m0(H.a([Q.WK(s,s,!1,L.bn("Launch the demo on a desktop web browser, change window width, or enable device preview",s,s,s,s,s),r,s),new S.yo(s),new S.Ls(s)],t.t),new V.X(8,8,8,8),new L.GD(s),C.w)}}
 S.yo.prototype={
 ak:function(){return new S.PL(C.r)}}
