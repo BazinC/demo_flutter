@@ -34,6 +34,7 @@ class AdaptiveScaffold extends StatefulWidget {
   final List<AdaptiveScaffoldDestination> destinations;
   final ValueChanged<int> onNavigationIndexChange;
   final FloatingActionButton floatingActionButton;
+  final Widget appBarFlexibaleSpace;
 
   AdaptiveScaffold({
     this.title,
@@ -43,6 +44,7 @@ class AdaptiveScaffold extends StatefulWidget {
     @required this.destinations,
     this.onNavigationIndexChange,
     this.floatingActionButton,
+    this.appBarFlexibaleSpace,
   });
 
   @override
@@ -83,6 +85,7 @@ class _AdaptiveScaffoldState extends State<AdaptiveScaffold> {
             child: Scaffold(
               appBar: AppBar(
                 actions: widget.actions,
+                flexibleSpace: widget.appBarFlexibaleSpace,
               ),
               body: widget.body,
               floatingActionButton: widget.floatingActionButton,
@@ -98,6 +101,7 @@ class _AdaptiveScaffoldState extends State<AdaptiveScaffold> {
         appBar: AppBar(
           title: widget.title,
           actions: widget.actions,
+          flexibleSpace: widget.appBarFlexibaleSpace,
         ),
         body: Row(
           children: [
@@ -133,6 +137,7 @@ class _AdaptiveScaffoldState extends State<AdaptiveScaffold> {
       appBar: AppBar(
         title: widget.title,
         actions: widget.actions,
+        flexibleSpace: widget.appBarFlexibaleSpace,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [

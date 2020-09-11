@@ -18,12 +18,16 @@ class _$CustomThemeDataTearOff {
       Color background,
       Color secondaryBackground,
       Color secondaryShadow,
+      Color gradientStart,
+      Color gradientEnd,
       @required Duration transitionDuration}) {
     return _CustomThemeData(
       primary: primary,
       background: background,
       secondaryBackground: secondaryBackground,
       secondaryShadow: secondaryShadow,
+      gradientStart: gradientStart,
+      gradientEnd: gradientEnd,
       transitionDuration: transitionDuration,
     );
   }
@@ -37,6 +41,8 @@ mixin _$CustomThemeData {
   Color get background;
   Color get secondaryBackground;
   Color get secondaryShadow;
+  Color get gradientStart;
+  Color get gradientEnd;
   Duration get transitionDuration;
 
   $CustomThemeDataCopyWith<CustomThemeData> get copyWith;
@@ -51,6 +57,8 @@ abstract class $CustomThemeDataCopyWith<$Res> {
       Color background,
       Color secondaryBackground,
       Color secondaryShadow,
+      Color gradientStart,
+      Color gradientEnd,
       Duration transitionDuration});
 }
 
@@ -68,6 +76,8 @@ class _$CustomThemeDataCopyWithImpl<$Res>
     Object background = freezed,
     Object secondaryBackground = freezed,
     Object secondaryShadow = freezed,
+    Object gradientStart = freezed,
+    Object gradientEnd = freezed,
     Object transitionDuration = freezed,
   }) {
     return _then(_value.copyWith(
@@ -80,6 +90,11 @@ class _$CustomThemeDataCopyWithImpl<$Res>
       secondaryShadow: secondaryShadow == freezed
           ? _value.secondaryShadow
           : secondaryShadow as Color,
+      gradientStart: gradientStart == freezed
+          ? _value.gradientStart
+          : gradientStart as Color,
+      gradientEnd:
+          gradientEnd == freezed ? _value.gradientEnd : gradientEnd as Color,
       transitionDuration: transitionDuration == freezed
           ? _value.transitionDuration
           : transitionDuration as Duration,
@@ -98,6 +113,8 @@ abstract class _$CustomThemeDataCopyWith<$Res>
       Color background,
       Color secondaryBackground,
       Color secondaryShadow,
+      Color gradientStart,
+      Color gradientEnd,
       Duration transitionDuration});
 }
 
@@ -117,6 +134,8 @@ class __$CustomThemeDataCopyWithImpl<$Res>
     Object background = freezed,
     Object secondaryBackground = freezed,
     Object secondaryShadow = freezed,
+    Object gradientStart = freezed,
+    Object gradientEnd = freezed,
     Object transitionDuration = freezed,
   }) {
     return _then(_CustomThemeData(
@@ -129,6 +148,11 @@ class __$CustomThemeDataCopyWithImpl<$Res>
       secondaryShadow: secondaryShadow == freezed
           ? _value.secondaryShadow
           : secondaryShadow as Color,
+      gradientStart: gradientStart == freezed
+          ? _value.gradientStart
+          : gradientStart as Color,
+      gradientEnd:
+          gradientEnd == freezed ? _value.gradientEnd : gradientEnd as Color,
       transitionDuration: transitionDuration == freezed
           ? _value.transitionDuration
           : transitionDuration as Duration,
@@ -142,6 +166,8 @@ class _$_CustomThemeData implements _CustomThemeData {
       this.background,
       this.secondaryBackground,
       this.secondaryShadow,
+      this.gradientStart,
+      this.gradientEnd,
       @required this.transitionDuration})
       : assert(transitionDuration != null);
 
@@ -154,11 +180,15 @@ class _$_CustomThemeData implements _CustomThemeData {
   @override
   final Color secondaryShadow;
   @override
+  final Color gradientStart;
+  @override
+  final Color gradientEnd;
+  @override
   final Duration transitionDuration;
 
   @override
   String toString() {
-    return 'CustomThemeData(primary: $primary, background: $background, secondaryBackground: $secondaryBackground, secondaryShadow: $secondaryShadow, transitionDuration: $transitionDuration)';
+    return 'CustomThemeData(primary: $primary, background: $background, secondaryBackground: $secondaryBackground, secondaryShadow: $secondaryShadow, gradientStart: $gradientStart, gradientEnd: $gradientEnd, transitionDuration: $transitionDuration)';
   }
 
   @override
@@ -177,6 +207,12 @@ class _$_CustomThemeData implements _CustomThemeData {
             (identical(other.secondaryShadow, secondaryShadow) ||
                 const DeepCollectionEquality()
                     .equals(other.secondaryShadow, secondaryShadow)) &&
+            (identical(other.gradientStart, gradientStart) ||
+                const DeepCollectionEquality()
+                    .equals(other.gradientStart, gradientStart)) &&
+            (identical(other.gradientEnd, gradientEnd) ||
+                const DeepCollectionEquality()
+                    .equals(other.gradientEnd, gradientEnd)) &&
             (identical(other.transitionDuration, transitionDuration) ||
                 const DeepCollectionEquality()
                     .equals(other.transitionDuration, transitionDuration)));
@@ -189,6 +225,8 @@ class _$_CustomThemeData implements _CustomThemeData {
       const DeepCollectionEquality().hash(background) ^
       const DeepCollectionEquality().hash(secondaryBackground) ^
       const DeepCollectionEquality().hash(secondaryShadow) ^
+      const DeepCollectionEquality().hash(gradientStart) ^
+      const DeepCollectionEquality().hash(gradientEnd) ^
       const DeepCollectionEquality().hash(transitionDuration);
 
   @override
@@ -202,6 +240,8 @@ abstract class _CustomThemeData implements CustomThemeData {
       Color background,
       Color secondaryBackground,
       Color secondaryShadow,
+      Color gradientStart,
+      Color gradientEnd,
       @required Duration transitionDuration}) = _$_CustomThemeData;
 
   @override
@@ -212,6 +252,10 @@ abstract class _CustomThemeData implements CustomThemeData {
   Color get secondaryBackground;
   @override
   Color get secondaryShadow;
+  @override
+  Color get gradientStart;
+  @override
+  Color get gradientEnd;
   @override
   Duration get transitionDuration;
   @override
