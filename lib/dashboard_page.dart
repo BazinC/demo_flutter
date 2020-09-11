@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_demo/custom_theme.dart';
@@ -26,7 +27,8 @@ class DashboardPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Flexible(child: Text('Test api')),
+                Flexible(child: Text('Test GET task')),
+                if (kIsWeb) Flexible(child: Text('(Not working on web platform. This API is not CORS enable)')),
                 Expanded(
                   child: FutureBuilder(
                     future: Provider.of<ApiClient>(context).getTask("82u462"),
