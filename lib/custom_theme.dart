@@ -15,7 +15,7 @@ abstract class CustomThemeData with _$CustomThemeData {
     @required Duration transitionDuration,
   }) = _CustomThemeData;
 
-  static const _defaultTransitionDuration = Duration(milliseconds: 400);
+  static const _defaultTransitionDuration = Duration(milliseconds: 200);
 
   factory CustomThemeData.fallback(BuildContext context) {
     return CustomThemeData(
