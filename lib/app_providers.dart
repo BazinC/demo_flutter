@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_demo/data_providers/api_client.dart';
 import 'package:responsive_demo/main.dart';
+import 'package:responsive_demo/repositories/task_repository.dart';
 
 class AppProviders extends StatelessWidget {
   const AppProviders({
@@ -18,6 +19,10 @@ class AppProviders extends StatelessWidget {
       providers: [
         Provider(
           create: (context) => ApiClient(),
+        ),
+        ProxyProvider<ApiClient, TaskRepository>(
+          create: (_) => TaskRepository(),
+          update: (context, apiClient, previous) => previous..apiClient = apiClient,
         ),
         ChangeNotifierProvider<LightThemeNotifier>(
           create: (context) => LightThemeNotifier(),

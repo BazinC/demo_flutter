@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:responsive_demo/model/task.dart';
+import 'package:responsive_demo/model/tasks.dart';
 
 /// The exception thrown when a called to the API has
 /// not been successful.
@@ -30,17 +32,29 @@ class ApiClient {
   final Client _client;
 
   // In a real app, we should use a config.
-  static const _authority = 'api.clickup.com';
+  static const _authority = kIsWeb ? 'private-anon-e7331ead75-clickup20.apiary-mock.com' : 'api.clickup.com';
   static const _baseUrl = '/api/v2';
 
   Future<Task> getTask(String taskId) {
     print('getTask');
-    return _get('/task/82u462/', deserializer: (json) => Task.fromJson(json));
+    return _get('/task/$taskId/', deserializer: (json) => Task.fromJson(json));
+  }
+
+  Future<List<Task>> getTasks(int listId) {
+    return _get('/list/$listId/task', deserializer: (json) {
+      // Workaround on Tasks API reponse.. On prod, the format is { "task" : { t1, t2, ...}} and on mock server the format is { t1, t2, ...}
+      if (json is List) {
+        return json.map((value) => Task.fromJson(value)).toList();
+      } else if (json['tasks'] != null) {
+        return (json['tasks'] as List).map((value) => Task.fromJson(value)).toList();
+      } else
+        return [];
+    });
   }
 
   Future<T> _get<T>(
     String url, {
-    T Function(Object) deserializer,
+    T Function(dynamic) deserializer,
     Map<String, String> queryParameters,
   }) async {
     final uri = Uri.https(
