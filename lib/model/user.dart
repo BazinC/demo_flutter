@@ -7,9 +7,9 @@ part 'user.g.dart';
 abstract class User with _$User {
   factory User(
     int id,
-    String username,
+    String username, {
     String color,
-    String profilePicture, {
+    String profilePicture,
     String email,
     String initials,
   }) = _User;

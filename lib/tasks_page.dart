@@ -4,30 +4,63 @@ import 'package:grouped_list/grouped_list.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_demo/cubit/cubit/tasks_cubit.dart';
 import 'package:responsive_demo/dashboard_card.dart';
-import 'package:responsive_demo/model/task.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
 import 'package:responsive_demo/widgets/avatar.dart';
+
+import 'globals.dart';
+import 'model/models.dart';
 
 class TasksPage extends StatelessWidget {
   const TasksPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => TasksCubit(Provider.of<TaskRepository>(context, listen: false))..getTasks(27886327),
-      child: Center(
+    return Center(
+      child: RefreshIndicator(
+        onRefresh: () async {
+          await context.bloc<TasksCubit>().refreshTasks(defaultListID);
+        },
         child: BlocBuilder<TasksCubit, TasksState>(
             builder: (context, state) => state.when(
                   inital: () => RaisedButton(
                     child: Text('reload'),
-                    onPressed: () => context.bloc<TasksCubit>().getTasks(27886327),
+                    onPressed: () => context.bloc<TasksCubit>().getTasks(defaultListID),
                   ),
-                  loading: () => CircularProgressIndicator(),
+                  // loading: (tasks) => _IdleTaskList(tasks: tasks),
+                  loading: (tasks) => CircularProgressIndicator(),
                   loaded: (tasks) => _TaskList(tasks: tasks),
-                  error: (text) => Text(text),
+                  error: (text) => Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(text),
+                      RaisedButton(
+                        child: Text('reload'),
+                        onPressed: () => context.bloc<TasksCubit>().getTasks(defaultListID),
+                      )
+                    ],
+                  ),
                 )),
       ),
     );
+  }
+}
+
+class _IdleTaskList extends StatefulWidget {
+  _IdleTaskList({Key key, this.tasks}) : super(key: key);
+  final List<Task> tasks;
+
+  @override
+  __IdleTaskListState createState() => __IdleTaskListState();
+}
+
+class __IdleTaskListState extends State<_IdleTaskList> {
+  @override
+  Widget build(BuildContext context) {
+    if (widget.tasks.isEmpty) {
+      return CircularProgressIndicator();
+    }
+    return IgnorePointer(ignoring: true, child: _TaskList(tasks: widget.tasks));
+    ;
   }
 }
 
@@ -75,21 +108,22 @@ class _Row extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final assignees = (task.assignees?.length > 0) ? task.assignees : null;
+    final assignees = (task.assignees != null && task.assignees.length > 0) ? task.assignees : null;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: DashboardCard(
         child: ListTile(
           title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              Text(task.name),
               assignees != null
                   ? Avatar(
                       clippingRadiusFactor: 0.5,
                       size: 40,
-                      user: assignees.first,
+                      user: assignees?.first,
                     )
                   : SizedBox.shrink(),
-              Text(task.name),
             ],
           ),
         ),

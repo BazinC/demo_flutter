@@ -8,6 +8,7 @@ import 'package:responsive_demo/dashboard_card.dart';
 import 'package:responsive_demo/dashboard_page.dart';
 import 'package:responsive_demo/settings_page.dart';
 import 'package:responsive_demo/tasks_page.dart';
+import 'package:sqflite/sqflite.dart';
 
 void main() {
   runApp(ResponsiveDemoApp());

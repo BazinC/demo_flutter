@@ -16,13 +16,13 @@ class _$UserTearOff {
   const _$UserTearOff();
 
 // ignore: unused_element
-  _User call(int id, String username, String color, String profilePicture,
-      {String email, String initials}) {
+  _User call(int id, String username,
+      {String color, String profilePicture, String email, String initials}) {
     return _User(
       id,
       username,
-      color,
-      profilePicture,
+      color: color,
+      profilePicture: profilePicture,
       email: email,
       initials: initials,
     );
@@ -118,8 +118,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     return _then(_User(
       id == freezed ? _value.id : id as int,
       username == freezed ? _value.username : username as String,
-      color == freezed ? _value.color : color as String,
-      profilePicture == freezed
+      color: color == freezed ? _value.color : color as String,
+      profilePicture: profilePicture == freezed
           ? _value.profilePicture
           : profilePicture as String,
       email: email == freezed ? _value.email : email as String,
@@ -130,12 +130,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 @JsonSerializable()
 class _$_User implements _User {
-  _$_User(this.id, this.username, this.color, this.profilePicture,
-      {this.email, this.initials})
+  _$_User(this.id, this.username,
+      {this.color, this.profilePicture, this.email, this.initials})
       : assert(id != null),
-        assert(username != null),
-        assert(color != null),
-        assert(profilePicture != null);
+        assert(username != null);
 
   factory _$_User.fromJson(Map<String, dynamic> json) =>
       _$_$_UserFromJson(json);
@@ -200,8 +198,11 @@ class _$_User implements _User {
 }
 
 abstract class _User implements User {
-  factory _User(int id, String username, String color, String profilePicture,
-      {String email, String initials}) = _$_User;
+  factory _User(int id, String username,
+      {String color,
+      String profilePicture,
+      String email,
+      String initials}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 

@@ -8,9 +8,9 @@ part of 'status.dart';
 
 _$_Status _$_$_StatusFromJson(Map<String, dynamic> json) {
   return _$_Status(
-    json['status'] as String,
-    json['color'] as String,
-    json['type'] as String,
+    status: json['status'] as String,
+    color: json['color'] as String,
+    type: json['type'] as String,
   );
 }
 

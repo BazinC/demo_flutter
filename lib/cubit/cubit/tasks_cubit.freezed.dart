@@ -18,8 +18,10 @@ class _$TasksStateTearOff {
   }
 
 // ignore: unused_element
-  Loading loading() {
-    return const Loading();
+  Loading loading(List<Task> oldTasks) {
+    return Loading(
+      oldTasks,
+    );
   }
 
 // ignore: unused_element
@@ -44,14 +46,14 @@ mixin _$TasksState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result loading(),
+    @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
     @required Result error(String message),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result loading(),
+    Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
     Result error(String message),
     @required Result orElse(),
@@ -121,7 +123,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result loading(),
+    @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
     @required Result error(String message),
   }) {
@@ -136,7 +138,7 @@ class _$Initial implements Initial {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result loading(),
+    Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
     Result error(String message),
     @required Result orElse(),
@@ -187,6 +189,7 @@ abstract class Initial implements TasksState {
 abstract class $LoadingCopyWith<$Res> {
   factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
       _$LoadingCopyWithImpl<$Res>;
+  $Res call({List<Task> oldTasks});
 }
 
 class _$LoadingCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
@@ -196,29 +199,50 @@ class _$LoadingCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
 
   @override
   Loading get _value => super._value as Loading;
+
+  @override
+  $Res call({
+    Object oldTasks = freezed,
+  }) {
+    return _then(Loading(
+      oldTasks == freezed ? _value.oldTasks : oldTasks as List<Task>,
+    ));
+  }
 }
 
 class _$Loading implements Loading {
-  const _$Loading();
+  const _$Loading(this.oldTasks) : assert(oldTasks != null);
+
+  @override
+  final List<Task> oldTasks;
 
   @override
   String toString() {
-    return 'TasksState.loading()';
+    return 'TasksState.loading(oldTasks: $oldTasks)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) ||
+        (other is Loading &&
+            (identical(other.oldTasks, oldTasks) ||
+                const DeepCollectionEquality()
+                    .equals(other.oldTasks, oldTasks)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(oldTasks);
+
+  @override
+  $LoadingCopyWith<Loading> get copyWith =>
+      _$LoadingCopyWithImpl<Loading>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result loading(),
+    @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
     @required Result error(String message),
   }) {
@@ -226,21 +250,21 @@ class _$Loading implements Loading {
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
-    return loading();
+    return loading(oldTasks);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result loading(),
+    Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
     Result error(String message),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (loading != null) {
-      return loading();
+      return loading(oldTasks);
     }
     return orElse();
   }
@@ -278,7 +302,10 @@ class _$Loading implements Loading {
 }
 
 abstract class Loading implements TasksState {
-  const factory Loading() = _$Loading;
+  const factory Loading(List<Task> oldTasks) = _$Loading;
+
+  List<Task> get oldTasks;
+  $LoadingCopyWith<Loading> get copyWith;
 }
 
 abstract class $LoadedCopyWith<$Res> {
@@ -336,7 +363,7 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result loading(),
+    @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
     @required Result error(String message),
   }) {
@@ -351,7 +378,7 @@ class _$Loaded implements Loaded {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result loading(),
+    Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
     Result error(String message),
     @required Result orElse(),
@@ -457,7 +484,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result inital(),
-    @required Result loading(),
+    @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
     @required Result error(String message),
   }) {
@@ -472,7 +499,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
-    Result loading(),
+    Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
     Result error(String message),
     @required Result orElse(),

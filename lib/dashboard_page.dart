@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/dashboard_card.dart';
-import 'package:responsive_demo/data_providers/api_client.dart';
-import 'package:responsive_demo/model/task.dart';
+
+import 'model/models.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key key}) : super(key: key);
@@ -51,7 +50,7 @@ class DashboardPage extends StatelessWidget {
           // ),
           // DashboardCard(
           //   child: FutureBuilder(
-          //     future: Provider.of<ApiClient>(context).getTasks(27886327),
+          //     future: Provider.of<ApiClient>(context).getTasks(defaultListID),
           //     builder: (context, snapshot) {
           //       if (snapshot.hasData) {
           //         debugPrint('Step 3, build widget: ${snapshot.data}');

@@ -4,8 +4,7 @@ import 'package:http/http.dart';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:responsive_demo/model/task.dart';
-import 'package:responsive_demo/model/tasks.dart';
+import 'package:responsive_demo/model/models.dart';
 
 /// The exception thrown when a called to the API has
 /// not been successful.
@@ -21,6 +20,8 @@ class ApiClientException implements Exception {
   /// The HTTP status code of the response.
   final int code;
 }
+
+const Duration _defaultTimeoutDuration = Duration(seconds: 3);
 
 /// A provider that fetches data from an API.
 class ApiClient {
@@ -70,7 +71,7 @@ class ApiClient {
     };
     headers[HttpHeaders.authorizationHeader] = 'pk_4758571_GD33Z03NGQFFE7O90XQC2PNIF011FHLW';
 
-    final response = await _client.get(uri, headers: headers);
+    final response = await _client.get(uri, headers: headers).timeout(_defaultTimeoutDuration);
     print('$response');
     if (response.statusCode == HttpStatus.ok) {
       final json = jsonDecode(response.body);

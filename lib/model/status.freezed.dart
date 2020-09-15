@@ -16,11 +16,11 @@ class _$StatusTearOff {
   const _$StatusTearOff();
 
 // ignore: unused_element
-  _Status call(String status, String color, String type) {
+  _Status call({String status, String color, String type}) {
     return _Status(
-      status,
-      color,
-      type,
+      status: status,
+      color: color,
+      type: type,
     );
   }
 }
@@ -86,19 +86,16 @@ class __$StatusCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
     Object type = freezed,
   }) {
     return _then(_Status(
-      status == freezed ? _value.status : status as String,
-      color == freezed ? _value.color : color as String,
-      type == freezed ? _value.type : type as String,
+      status: status == freezed ? _value.status : status as String,
+      color: color == freezed ? _value.color : color as String,
+      type: type == freezed ? _value.type : type as String,
     ));
   }
 }
 
 @JsonSerializable()
 class _$_Status implements _Status {
-  _$_Status(this.status, this.color, this.type)
-      : assert(status != null),
-        assert(color != null),
-        assert(type != null);
+  _$_Status({this.status, this.color, this.type});
 
   factory _$_Status.fromJson(Map<String, dynamic> json) =>
       _$_$_StatusFromJson(json);
@@ -145,7 +142,7 @@ class _$_Status implements _Status {
 }
 
 abstract class _Status implements Status {
-  factory _Status(String status, String color, String type) = _$_Status;
+  factory _Status({String status, String color, String type}) = _$_Status;
 
   factory _Status.fromJson(Map<String, dynamic> json) = _$_Status.fromJson;
 

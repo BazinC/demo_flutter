@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_demo/model/user.dart';
+import 'package:responsive_demo/model/models.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({Key key, this.user, this.size = 40, this.clippingRadiusFactor = 0.4})

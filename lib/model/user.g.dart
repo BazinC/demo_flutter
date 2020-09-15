@@ -10,8 +10,8 @@ _$_User _$_$_UserFromJson(Map<String, dynamic> json) {
   return _$_User(
     json['id'] as int,
     json['username'] as String,
-    json['color'] as String,
-    json['profilePicture'] as String,
+    color: json['color'] as String,
+    profilePicture: json['profilePicture'] as String,
     email: json['email'] as String,
     initials: json['initials'] as String,
   );
