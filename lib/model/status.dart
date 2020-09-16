@@ -5,7 +5,12 @@ part 'status.g.dart';
 
 @freezed
 abstract class Status with _$Status {
-  factory Status({String status, String color, String type}) = _Status;
+  factory Status({
+    String status,
+    String color,
+    String type,
+    int orderindex,
+  }) = _Status;
 
   factory Status.fromJson(Map<String, dynamic> json) => _$StatusFromJson(json);
 }

@@ -14,11 +14,14 @@ abstract class Task with _$Task {
     String name,
     Status status,
     User creator, {
+    String orderindex,
     String description,
-    String text_content,
+    @JsonKey(name: 'text_content') String textContent,
     List<User> assignees,
     List<User> watchers,
-    String custom_id,
+    @JsonKey(name: 'custom_id') String customId,
+    String parent,
+    @Default(<Task>[]) List<Task> children,
   }) = _Task;
 
   factory Task.fromJson(Map<String, dynamic> json) => _$TaskFromJson(json);
@@ -41,7 +44,7 @@ abstract class Task with _$Task {
         initials: map[DatabaseProvider.COLUMN_USER_EMAIL],
       ),
       description: map[DatabaseProvider.COLUMN_TASK_DESCRIPTION],
-      text_content: map[DatabaseProvider.COLUMN_TASK_TEXT_CONTENT],
+      textContent: map[DatabaseProvider.COLUMN_TASK_TEXT_CONTENT],
     );
   }
 }
@@ -52,7 +55,7 @@ extension TaskExtension on Task {
       DatabaseProvider.COLUMN_TASK_NAME: name,
       DatabaseProvider.COLUMN_TASK_CREATOR_ID: creator.id,
       DatabaseProvider.COLUMN_TASK_DESCRIPTION: description,
-      DatabaseProvider.COLUMN_TASK_TEXT_CONTENT: text_content,
+      DatabaseProvider.COLUMN_TASK_TEXT_CONTENT: textContent,
       DatabaseProvider.COLUMN_TASK_STATUS_ID: status.status,
     };
 

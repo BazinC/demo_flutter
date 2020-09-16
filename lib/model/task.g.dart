@@ -16,8 +16,9 @@ _$_Task _$_$_TaskFromJson(Map<String, dynamic> json) {
     json['creator'] == null
         ? null
         : User.fromJson(json['creator'] as Map<String, dynamic>),
+    orderindex: json['orderindex'] as String,
     description: json['description'] as String,
-    text_content: json['text_content'] as String,
+    textContent: json['text_content'] as String,
     assignees: (json['assignees'] as List)
         ?.map(
             (e) => e == null ? null : User.fromJson(e as Map<String, dynamic>))
@@ -26,7 +27,13 @@ _$_Task _$_$_TaskFromJson(Map<String, dynamic> json) {
         ?.map(
             (e) => e == null ? null : User.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    custom_id: json['custom_id'] as String,
+    customId: json['custom_id'] as String,
+    parent: json['parent'] as String,
+    children: (json['children'] as List)
+            ?.map((e) =>
+                e == null ? null : Task.fromJson(e as Map<String, dynamic>))
+            ?.toList() ??
+        [],
   );
 }
 
@@ -35,9 +42,12 @@ Map<String, dynamic> _$_$_TaskToJson(_$_Task instance) => <String, dynamic>{
       'name': instance.name,
       'status': instance.status,
       'creator': instance.creator,
+      'orderindex': instance.orderindex,
       'description': instance.description,
-      'text_content': instance.text_content,
+      'text_content': instance.textContent,
       'assignees': instance.assignees,
       'watchers': instance.watchers,
-      'custom_id': instance.custom_id,
+      'custom_id': instance.customId,
+      'parent': instance.parent,
+      'children': instance.children,
     };

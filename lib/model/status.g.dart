@@ -11,6 +11,7 @@ _$_Status _$_$_StatusFromJson(Map<String, dynamic> json) {
     status: json['status'] as String,
     color: json['color'] as String,
     type: json['type'] as String,
+    orderindex: json['orderindex'] as int,
   );
 }
 
@@ -18,4 +19,5 @@ Map<String, dynamic> _$_$_StatusToJson(_$_Status instance) => <String, dynamic>{
       'status': instance.status,
       'color': instance.color,
       'type': instance.type,
+      'orderindex': instance.orderindex,
     };

@@ -16,11 +16,12 @@ class _$StatusTearOff {
   const _$StatusTearOff();
 
 // ignore: unused_element
-  _Status call({String status, String color, String type}) {
+  _Status call({String status, String color, String type, int orderindex}) {
     return _Status(
       status: status,
       color: color,
       type: type,
+      orderindex: orderindex,
     );
   }
 }
@@ -32,6 +33,7 @@ mixin _$Status {
   String get status;
   String get color;
   String get type;
+  int get orderindex;
 
   Map<String, dynamic> toJson();
   $StatusCopyWith<Status> get copyWith;
@@ -40,7 +42,7 @@ mixin _$Status {
 abstract class $StatusCopyWith<$Res> {
   factory $StatusCopyWith(Status value, $Res Function(Status) then) =
       _$StatusCopyWithImpl<$Res>;
-  $Res call({String status, String color, String type});
+  $Res call({String status, String color, String type, int orderindex});
 }
 
 class _$StatusCopyWithImpl<$Res> implements $StatusCopyWith<$Res> {
@@ -55,11 +57,13 @@ class _$StatusCopyWithImpl<$Res> implements $StatusCopyWith<$Res> {
     Object status = freezed,
     Object color = freezed,
     Object type = freezed,
+    Object orderindex = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed ? _value.status : status as String,
       color: color == freezed ? _value.color : color as String,
       type: type == freezed ? _value.type : type as String,
+      orderindex: orderindex == freezed ? _value.orderindex : orderindex as int,
     ));
   }
 }
@@ -68,7 +72,7 @@ abstract class _$StatusCopyWith<$Res> implements $StatusCopyWith<$Res> {
   factory _$StatusCopyWith(_Status value, $Res Function(_Status) then) =
       __$StatusCopyWithImpl<$Res>;
   @override
-  $Res call({String status, String color, String type});
+  $Res call({String status, String color, String type, int orderindex});
 }
 
 class __$StatusCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
@@ -84,18 +88,20 @@ class __$StatusCopyWithImpl<$Res> extends _$StatusCopyWithImpl<$Res>
     Object status = freezed,
     Object color = freezed,
     Object type = freezed,
+    Object orderindex = freezed,
   }) {
     return _then(_Status(
       status: status == freezed ? _value.status : status as String,
       color: color == freezed ? _value.color : color as String,
       type: type == freezed ? _value.type : type as String,
+      orderindex: orderindex == freezed ? _value.orderindex : orderindex as int,
     ));
   }
 }
 
 @JsonSerializable()
 class _$_Status implements _Status {
-  _$_Status({this.status, this.color, this.type});
+  _$_Status({this.status, this.color, this.type, this.orderindex});
 
   factory _$_Status.fromJson(Map<String, dynamic> json) =>
       _$_$_StatusFromJson(json);
@@ -106,10 +112,12 @@ class _$_Status implements _Status {
   final String color;
   @override
   final String type;
+  @override
+  final int orderindex;
 
   @override
   String toString() {
-    return 'Status(status: $status, color: $color, type: $type)';
+    return 'Status(status: $status, color: $color, type: $type, orderindex: $orderindex)';
   }
 
   @override
@@ -121,7 +129,10 @@ class _$_Status implements _Status {
             (identical(other.color, color) ||
                 const DeepCollectionEquality().equals(other.color, color)) &&
             (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.orderindex, orderindex) ||
+                const DeepCollectionEquality()
+                    .equals(other.orderindex, orderindex)));
   }
 
   @override
@@ -129,7 +140,8 @@ class _$_Status implements _Status {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(color) ^
-      const DeepCollectionEquality().hash(type);
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(orderindex);
 
   @override
   _$StatusCopyWith<_Status> get copyWith =>
@@ -142,7 +154,8 @@ class _$_Status implements _Status {
 }
 
 abstract class _Status implements Status {
-  factory _Status({String status, String color, String type}) = _$_Status;
+  factory _Status({String status, String color, String type, int orderindex}) =
+      _$_Status;
 
   factory _Status.fromJson(Map<String, dynamic> json) = _$_Status.fromJson;
 
@@ -152,6 +165,8 @@ abstract class _Status implements Status {
   String get color;
   @override
   String get type;
+  @override
+  int get orderindex;
   @override
   _$StatusCopyWith<_Status> get copyWith;
 }
