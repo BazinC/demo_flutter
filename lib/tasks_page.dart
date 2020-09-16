@@ -7,6 +7,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_demo/cubit/cubit/tasks_cubit.dart';
 import 'package:responsive_demo/dashboard_card.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
+import 'package:responsive_demo/widgets/animated_rotation.dart';
+import 'package:responsive_demo/widgets/animated_size.dart';
 import 'package:responsive_demo/widgets/avatar.dart';
 
 import 'globals.dart';
@@ -147,7 +149,7 @@ class _Row extends StatefulWidget {
   __RowState createState() => __RowState();
 }
 
-class __RowState extends State<_Row> {
+class __RowState extends State<_Row> with SingleTickerProviderStateMixin {
   bool folded = false;
 
   @override
@@ -164,13 +166,17 @@ class __RowState extends State<_Row> {
                 children: [
                   Visibility(
                     visible: widget.task.children.isNotEmpty,
-                    child: _AnimatedFoldButton(
-                      folded: folded,
-                      onPressed: () {
+                    child: GestureDetector(
+                      onTap: () {
                         setState(() {
                           folded = !folded;
                         });
                       },
+                      child: AnimatedRotation(
+                        rotated: !folded,
+                        turns: 0.25,
+                        child: Icon(Icons.arrow_forward),
+                      ),
                     ),
                   ),
                   Flexible(child: Text(widget.task.name)),
@@ -183,84 +189,17 @@ class __RowState extends State<_Row> {
                       : SizedBox.shrink(),
                 ],
               ),
-              _AnimatedHeightTransition()
+              AnimatedSizeFactor(
+                fullSized: !folded,
+                child: Column(children: [
+                  Text('test'),
+                  Text('test'),
+                ]),
+              ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _AnimatedHeightTransition extends StatefulWidget {
-  _AnimatedHeightTransition({Key key}) : super(key: key);
-
-  @override
-  __AnimatedHeightTransitionState createState() => __AnimatedHeightTransitionState();
-}
-
-class __AnimatedHeightTransitionState extends State<_AnimatedHeightTransition> with SingleTickerProviderStateMixin {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        //  child: child,
-        );
-  }
-}
-
-class _AnimatedFoldButton extends StatefulWidget {
-  const _AnimatedFoldButton({Key key, this.folded, this.onPressed}) : super(key: key);
-  final folded;
-  final VoidCallback onPressed;
-
-  @override
-  __AnimatedFoldButtonState createState() => __AnimatedFoldButtonState();
-}
-
-const Duration foldAnimationDuration = Duration(milliseconds: 200);
-
-class __AnimatedFoldButtonState extends State<_AnimatedFoldButton> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _turns;
-
-  @override
-  void initState() {
-    _animationController = AnimationController(vsync: this, duration: foldAnimationDuration);
-    _turns = Tween<double>(begin: 0, end: 0.25).animate(CurvedAnimation(curve: Curves.easeIn, parent: _animationController));
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _animationController.dispose();
-  }
-
-  @override
-  void didUpdateWidget(_AnimatedFoldButton oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.folded != widget.folded) {
-      if (widget.folded) {
-        _animationController.reverse();
-      } else {
-        _animationController.forward();
-      }
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // final topBarTransform = Matrix4.identity();
-    // final width = 8.0;
-    // final height = 8.0;
-    // topBarTransform.multiply(Matrix4.rotationZ(pi / 4));
-    // topBarTransform.translate(-width / 2, -height / 2);
-    return IconButton(
-      icon: RotationTransition(
-        turns: _turns,
-        child: Icon(Icons.arrow_forward),
-      ),
-      onPressed: widget.onPressed,
     );
   }
 }
