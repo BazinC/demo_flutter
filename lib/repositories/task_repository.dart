@@ -12,14 +12,15 @@ class TaskRepository {
     if (forceRefresh) {
       logger.i('getting tasks from API');
       result = await apiClient.getTasks(listId);
-      databaseProvider.saveTasks(result);
+      await databaseProvider.saveTasks(result);
     } else {
       logger.i('getting tasks from database');
       result = await databaseProvider.getTasks();
+      print('coucou');
       if (result.isEmpty) {
         logger.i('No records in database. Calling API');
         result = await apiClient.getTasks(listId);
-        databaseProvider.saveTasks(result);
+        await databaseProvider.saveTasks(result);
       }
     }
 

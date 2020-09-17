@@ -9,7 +9,7 @@ class AnimatedRotation extends StatefulWidget {
       this.turns = 1.0,
       durat,
       this.duration = defaultAnimationDuration,
-      this.curve = Curves.easeIn})
+      this.curve = Curves.easeOut})
       : assert(child != null),
         assert(rotated != null),
         super(key: key);
@@ -37,8 +37,8 @@ class _AnimateRotationState extends State<AnimatedRotation> with SingleTickerPro
 
   @override
   void dispose() {
-    super.dispose();
     _animationController.dispose();
+    super.dispose();
   }
 
   void _initTurnsAnimation() {

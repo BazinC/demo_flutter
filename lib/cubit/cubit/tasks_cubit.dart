@@ -30,6 +30,8 @@ class TasksCubit extends Cubit<TasksState> {
       emit(Error("Couldn't fetch tasks. (API error. $e)"));
     } on SocketException {
       emit(Error("Couldn't fetch tasks. Is the device online?"));
+    } on TimeoutException {
+      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?"));
     }
   }
 
@@ -42,6 +44,8 @@ class TasksCubit extends Cubit<TasksState> {
       emit(Error("Couldn't fetch tasks. (API error. $e)"));
     } on SocketException {
       emit(Error("Couldn't fetch tasks. Is the device online?"));
+    } on TimeoutException {
+      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?"));
     }
   }
 }

@@ -32,7 +32,7 @@ abstract class CustomThemeData with _$CustomThemeData {
   factory CustomThemeData.light() {
     return CustomThemeData(
       primary: Colors.black,
-      background: Color(0xFFFBFDFF),
+      background: Color(0xFFEEF0F1),
       secondaryBackground: Color(0xFFFFFFFF),
       secondaryShadow: Color(0xFFADADAD),
       gradientStart: Color(0xFF813BED),
@@ -46,7 +46,7 @@ abstract class CustomThemeData with _$CustomThemeData {
       primary: Color(0xFFD6D6D6),
       background: Color(0xFF1F1F1F),
       secondaryBackground: Color(0xFF383838),
-      secondaryShadow: Color(0xFF333333),
+      secondaryShadow: Color(0x6C2E2E2E),
       gradientStart: Color(0xFF56269E),
       gradientEnd: Color(0xFF3FA0C4),
       transitionDuration: _defaultTransitionDuration,

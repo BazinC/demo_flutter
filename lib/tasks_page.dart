@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_demo/cubit/cubit/tasks_cubit.dart';
+import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/dashboard_card.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
 import 'package:responsive_demo/widgets/animated_rotation.dart';
@@ -26,29 +27,24 @@ class TasksPage extends StatelessWidget {
         },
         child: BlocBuilder<TasksCubit, TasksState>(
             builder: (context, state) => state.when(
-                  inital: () => RaisedButton(
-                    child: Text('reload'),
-                    onPressed: () => context.bloc<TasksCubit>().getTasks(defaultListID),
+                  inital: () => Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [Text('no data yet'), _ReloadButton()],
                   ),
+
                   // loading: (tasks) => _IdleTaskList(tasks: tasks),
-                  // loading: (tasks) => CircularProgressIndicator(),
-                  loading: (tasks) => _HeroTaskList(
-                    tasks: tasks,
-                    key: ValueKey(defaultListID),
-                  ),
-                  loaded: (tasks) => _HeroTaskList(
+                  loading: (tasks) => CircularProgressIndicator(),
+                  // loading: (tasks) => _TaskList(
+                  //   tasks: tasks,
+                  //   key: ValueKey(defaultListID),
+                  // ),
+                  loaded: (tasks) => _TaskList(
                     tasks: tasks,
                     key: ValueKey(defaultListID),
                   ),
                   error: (text) => Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(text),
-                      RaisedButton(
-                        child: Text('reload'),
-                        onPressed: () => context.bloc<TasksCubit>().getTasks(defaultListID),
-                      )
-                    ],
+                    children: [Text(text), _ReloadButton()],
                   ),
                 )),
       ),
@@ -56,21 +52,40 @@ class TasksPage extends StatelessWidget {
   }
 }
 
-class _HeroTaskList extends StatefulWidget {
-  _HeroTaskList({Key key, this.tasks}) : super(key: key);
+class _ReloadButton extends StatelessWidget {
+  const _ReloadButton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      child: Text('reload'),
+      onPressed: () => context.bloc<TasksCubit>().refreshTasks(defaultListID),
+    );
+  }
+}
+
+class _TaskList extends StatefulWidget {
+  _TaskList({Key key, this.tasks}) : super(key: key);
   final List<Task> tasks;
 
   @override
-  __HeroTaskListState createState() => __HeroTaskListState();
+  _TaskListState createState() => _TaskListState();
 }
 
-class __HeroTaskListState extends State<_HeroTaskList> {
+class _TaskListState extends State<_TaskList> {
   final List<Task> tasks = <Task>[];
 
   @override
   void initState() {
     super.initState();
-    tasks.addAll(widget.tasks.take(30).toList()
+    initTaskList(widget.tasks);
+  }
+
+  void initTaskList(List<Task> taskList) {
+    tasks.clear();
+    tasks.addAll(taskList
       ..sort((taskB, taskA) {
         if (taskA.status.orderindex == taskB.status.orderindex) {
           return taskA.orderindex.compareTo(taskB.orderindex);
@@ -80,65 +95,34 @@ class __HeroTaskListState extends State<_HeroTaskList> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return GroupedListView<Task, String>(
-      // elements: widget.tasks,
-      elements: tasks,
-      groupBy: (task) => task.status.status,
-      groupHeaderBuilder: (Task task) => _GroupHeader(
-        task: task,
-      ),
-      sort: false,
-      // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
-      itemBuilder: (context, Task task) => _Row(
-        task: task,
-      ),
-    );
+  void didUpdateWidget(_TaskList oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.tasks != widget.tasks) {
+      initTaskList(widget.tasks);
+    }
   }
-}
 
-class _TaskList extends StatefulWidget {
-  const _TaskList({Key key, this.tasks, this.isLoading}) : super(key: key);
-
-  final List<Task> tasks;
-  final bool isLoading;
-
-  @override
-  __TaskListState createState() => __TaskListState();
-}
-
-class __TaskListState extends State<_TaskList> {
   @override
   Widget build(BuildContext context) {
     return GroupedListView<Task, String>(
-      elements: widget.tasks,
-      groupBy: (task) => task.status.status,
-      groupHeaderBuilder: (Task task) => _GroupHeader(
-        task: task,
-      ),
-      // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
-      itemBuilder: (context, Task task) => _Row(
-        task: task,
-      ),
-      order: GroupedListOrder.ASC,
-    );
-
-    // ListView.builder(
-    //     itemBuilder: (context, i) {
-    //       final task = tasks[i];
-    //       return Padding(
-    //         padding: const EdgeInsets.all(8.0),
-    //         child: DashboardCard(
-    //           child: ListTile(title: Text(task.name)),
-    //         ),
-    //       );
-    //     },
-    //     itemCount: tasks.length);
+        // elements: widget.tasks,
+        elements: tasks,
+        groupBy: (task) => task.status.status,
+        groupHeaderBuilder: (Task task) => _GroupHeader(
+              task: task,
+            ),
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        sort: false,
+        // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
+        itemBuilder: (context, Task task) => _TaskRow(task: task),
+        separator: SizedBox(
+          height: 10,
+        ));
   }
 }
 
-class _Row extends StatefulWidget {
-  const _Row({
+class _TaskRow extends StatefulWidget {
+  const _TaskRow({
     Key key,
     this.task,
   }) : super(key: key);
@@ -146,60 +130,111 @@ class _Row extends StatefulWidget {
   final Task task;
 
   @override
-  __RowState createState() => __RowState();
+  _TaskRowState createState() => _TaskRowState();
 }
 
-class __RowState extends State<_Row> with SingleTickerProviderStateMixin {
+class _TaskRowState extends State<_TaskRow> with SingleTickerProviderStateMixin {
   bool folded = false;
 
   @override
   Widget build(BuildContext context) {
     final assignees = (widget.task.assignees != null && widget.task.assignees.length > 0) ? widget.task.assignees : null;
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          folded = !folded;
+        });
+      },
       child: DashboardCard(
-        child: ListTile(
-          title: Column(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Visibility(
-                    visible: widget.task.children.isNotEmpty,
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          folded = !folded;
-                        });
-                      },
-                      child: AnimatedRotation(
-                        rotated: !folded,
-                        turns: 0.25,
-                        child: Icon(Icons.arrow_forward),
+              Container(
+                // color: Colors.red,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Visibility(
+                            maintainSize: true,
+                            maintainAnimation: true,
+                            maintainState: true,
+                            visible: widget.task.children.isNotEmpty,
+                            child: Container(
+                              // color: Colors.green,
+                              child: AnimatedRotation(
+                                rotated: !folded,
+                                turns: 0.25,
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: CustomTheme.of(context).primary.withOpacity(0.6),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Flexible(
+                              child: Container(
+                            // color: Colors.pink,
+                            child: Text(widget.task.name),
+                          )),
+                        ],
                       ),
                     ),
+                    assignees != null
+                        ? Avatar(
+                            clippingRadiusFactor: 0.5,
+                            size: 40,
+                            user: assignees?.first,
+                          )
+                        : SizedBox(
+                            height: 40,
+                            width: 40,
+                          ),
+                  ],
+                ),
+              ),
+              if (widget.task.children.isNotEmpty)
+                AnimatedSizeFactor(
+                  fullSized: !folded,
+                  child: _SubTaskList(
+                    subtasks: widget.task.children,
                   ),
-                  Flexible(child: Text(widget.task.name)),
-                  assignees != null
-                      ? Avatar(
-                          clippingRadiusFactor: 0.5,
-                          size: 40,
-                          user: assignees?.first,
-                        )
-                      : SizedBox.shrink(),
-                ],
-              ),
-              AnimatedSizeFactor(
-                fullSized: !folded,
-                child: Column(children: [
-                  Text('test'),
-                  Text('test'),
-                ]),
-              ),
+                )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _SubTaskList extends StatelessWidget {
+  const _SubTaskList({Key key, this.subtasks}) : super(key: key);
+  final List<Task> subtasks;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [...subtasks.map((subTask) => _SubTaskRow(subTask: subTask)).toList()],
+    );
+  }
+}
+
+class _SubTaskRow extends StatelessWidget {
+  const _SubTaskRow({Key key, this.subTask}) : super(key: key);
+  final Task subTask;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(subTask.name),
+      ],
     );
   }
 }

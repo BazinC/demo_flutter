@@ -27,6 +27,7 @@ class AppProviders extends StatelessWidget {
         ),
         Provider<DatabaseProvider>(
           create: (context) => DatabaseProvider.db,
+          dispose: (_, db) => db.close(),
         ),
         ProxyProvider2<ApiClient, DatabaseProvider, TaskRepository>(
           create: (_) => TaskRepository(),

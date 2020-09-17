@@ -65,10 +65,10 @@ class DashboardPage extends StatelessWidget {
           //   ),
           // ),
           DashboardCard(
-            child: Text('A card'),
+            child: Text('Comin soon : awesome chart'),
           ),
           DashboardCard(
-            child: Text('Another card'),
+            child: Text('Comin soon : ANOTHER awesome chart'),
           ),
         ],
       )),

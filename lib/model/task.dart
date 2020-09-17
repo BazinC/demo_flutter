@@ -34,35 +34,42 @@ abstract class Task with _$Task {
         status: map[DatabaseProvider.COLUMN_STATUS_ID],
         color: map[DatabaseProvider.COLUMN_STATUS_COLOR],
         type: map[DatabaseProvider.COLUMN_STATUS_TYPE],
+        orderindex: map[DatabaseProvider.COLUMN_STATUS_ORDER_INDEX],
       ),
-      User(
-        map[DatabaseProvider.COLUMN_TASK_CREATOR_ID],
-        map[DatabaseProvider.COLUMN_USER_NAME],
-        color: map[DatabaseProvider.COLUMN_USER_COLOR],
-        profilePicture: map[DatabaseProvider.COLUMN_USER_PROFILE_PICTURE],
-        email: map[DatabaseProvider.COLUMN_USER_EMAIL],
-        initials: map[DatabaseProvider.COLUMN_USER_EMAIL],
-      ),
+      User.fromMap(map),
+      // User(
+      //   map[DatabaseProvider.COLUMN_TASK_CREATOR_ID],
+      //   map[DatabaseProvider.COLUMN_USER_NAME],
+      //   color: map[DatabaseProvider.COLUMN_USER_COLOR],
+      //   profilePicture: map[DatabaseProvider.COLUMN_USER_PROFILE_PICTURE],
+      //   email: map[DatabaseProvider.COLUMN_USER_EMAIL],
+      //   initials: map[DatabaseProvider.COLUMN_USER_EMAIL],
+      // ),
       description: map[DatabaseProvider.COLUMN_TASK_DESCRIPTION],
       textContent: map[DatabaseProvider.COLUMN_TASK_TEXT_CONTENT],
+      orderindex: map[DatabaseProvider.COLUMN_TASK_ORDER_INDEX],
+      parent: map[DatabaseProvider.COLUMN_TASK_PARENT_ID],
+      children: <Task>[],
+      assignees: <User>[],
     );
   }
 }
 
-extension TaskExtension on Task {
-  Map<String, dynamic> toMap() {
-    var map = <String, dynamic>{
-      DatabaseProvider.COLUMN_TASK_NAME: name,
-      DatabaseProvider.COLUMN_TASK_CREATOR_ID: creator.id,
-      DatabaseProvider.COLUMN_TASK_DESCRIPTION: description,
-      DatabaseProvider.COLUMN_TASK_TEXT_CONTENT: textContent,
-      DatabaseProvider.COLUMN_TASK_STATUS_ID: status.status,
-    };
+extension SubtaskExtension on List<Task> {
+  /// returns a new list of parent tasks where each task contains its subtasks.
+  List<Task> toStructuredList() {
+    final tasksWithNestedSubtasks = List<Task>.from(this);
 
-    if (id != null) {
-      map[DatabaseProvider.COLUMN_TASK_ID] = id;
-    }
+    this.forEach((task) {
+      if (task.parent != null) {
+        final parent = tasksWithNestedSubtasks.where((parent) => parent.id == task.parent).first;
+        if (parent != null) {
+          parent.children.add(task.copyWith());
+          tasksWithNestedSubtasks.removeWhere((e) => e.id == task.id);
+        }
+      }
+    });
 
-    return map;
+    return tasksWithNestedSubtasks;
   }
 }

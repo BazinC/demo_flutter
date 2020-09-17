@@ -42,7 +42,8 @@ class ApiClient {
   }
 
   Future<List<Task>> getTasks(int listId, {bool includeSubstasks = true}) async {
-    final tasks = await _get<List<Task>>('/list/$listId/task', queryParameters: {'subtasks': includeSubstasks.toString()}, deserializer: (json) {
+    final flatTaskList =
+        await _get<List<Task>>('/list/$listId/task', queryParameters: {'subtasks': includeSubstasks.toString()}, deserializer: (json) {
       // Workaround on Tasks API reponse.. On prod, the format is { "task" : { t1, t2, ...}} and on mock server the format is { t1, t2, ...}
       if (json is List) {
         return json.map((value) => Task.fromJson(value)).toList();
@@ -52,19 +53,7 @@ class ApiClient {
         return [];
     });
 
-    final tasksWithNestedSubtasks = List<Task>.from(tasks);
-
-    tasks.forEach((task) {
-      if (task.parent != null) {
-        final parent = tasksWithNestedSubtasks.where((parent) => parent.id == task.parent).first;
-        if (parent != null) {
-          parent.children.add(task.copyWith());
-          tasksWithNestedSubtasks.removeWhere((e) => e.id == task.id);
-        }
-      }
-    });
-
-    return tasksWithNestedSubtasks;
+    return flatTaskList.toStructuredList();
   }
 
   Future<T> _get<T>(
