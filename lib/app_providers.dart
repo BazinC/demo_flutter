@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +7,7 @@ import 'package:responsive_demo/data_providers/api_client.dart';
 import 'package:responsive_demo/main.dart';
 import 'package:responsive_demo/repositories/status_repository.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
+import 'package:responsive_demo/repositories/task_repository_mock.dart';
 
 import 'cubit/cubit/tasks_cubit.dart';
 import 'database/database.dart';
@@ -32,7 +34,7 @@ class AppProviders extends StatelessWidget {
           dispose: (_, db) => db.close(),
         ),
         ProxyProvider2<ApiClient, DatabaseProvider, TaskRepository>(
-          create: (_) => TaskRepository(),
+          create: (_) => kIsWeb ? TaskRepositoryMock() : TaskRepository(),
           update: (context, apiClient, databaseProvider, previous) => previous
             ..apiClient = apiClient
             ..databaseProvider = databaseProvider,
