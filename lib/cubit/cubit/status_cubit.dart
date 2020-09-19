@@ -19,6 +19,7 @@ class StatusCubit extends Cubit<StatusState> {
       if (!loaded) {
         emit(Loading(statusList));
         statusList = await _statusRepository.getStatusList();
+
         loaded = true;
       }
       emit(Loaded(statusList));

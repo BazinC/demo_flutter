@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:responsive_demo/custom_theme.dart';
 
 // Copied from https://github.com/flutter/samples/blob/master/experimental/web_dashboard/lib/src/pages/home.dart
 
@@ -81,7 +82,7 @@ class _AdaptiveScaffoldState extends State<AdaptiveScaffold> {
           VerticalDivider(
             width: 1,
             thickness: 1,
-            color: Colors.grey[300],
+            color: CustomTheme.of(context).secondaryBackground,
           ),
           Expanded(
             child: Scaffold(

@@ -61,7 +61,7 @@ class TasksCubit extends Cubit<TasksState> {
   Future<void> createTask(String name, int listId, {String description, Status status}) async {
     try {
       emit(Loading(tasks));
-      final task = await _taskRepository.createTask(Task(name: name, description: description, status: Status(status: status.status)), listId);
+      final task = await _taskRepository.createTask(Task(name: name, description: description, status: status), listId);
       emit(Loaded(tasks..add(task)));
     } on ApiClientException catch (e) {
       emit(Error("Couldn't create task. (API error. $e)", tasks));

@@ -1,0 +1,6 @@
+[
+    {"status":"in progress","color":"#08adff","type":"custom","orderindex":1},
+    {"status":"to do","color":"#a09d9d","type":"open","orderindex":0},
+    {"status":"revision","color":"#ff540d","type":"custom","orderindex":3},
+    {"status":"review","color":"#ffcf00","type":"custom","orderindex":2}
+]   
