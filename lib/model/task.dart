@@ -9,11 +9,11 @@ part 'task.g.dart';
 
 @freezed
 abstract class Task with _$Task {
-  factory Task(
+  factory Task({
+    Status status,
+    User creator,
     String id,
     String name,
-    Status status,
-    User creator, {
     String orderindex,
     String description,
     @JsonKey(name: 'text_content') String textContent,
@@ -28,15 +28,15 @@ abstract class Task with _$Task {
 
   factory Task.fromMap(Map<String, dynamic> map) {
     return Task(
-      map[DatabaseProvider.COLUMN_TASK_ID],
-      map[DatabaseProvider.COLUMN_TASK_NAME],
-      Status(
+      id: map[DatabaseProvider.COLUMN_TASK_ID],
+      name: map[DatabaseProvider.COLUMN_TASK_NAME],
+      status: Status(
         status: map[DatabaseProvider.COLUMN_STATUS_ID],
         color: map[DatabaseProvider.COLUMN_STATUS_COLOR],
         type: map[DatabaseProvider.COLUMN_STATUS_TYPE],
         orderindex: map[DatabaseProvider.COLUMN_STATUS_ORDER_INDEX],
       ),
-      User.fromMap(map),
+      creator: User.fromMap(map),
       // User(
       //   map[DatabaseProvider.COLUMN_TASK_CREATOR_ID],
       //   map[DatabaseProvider.COLUMN_USER_NAME],

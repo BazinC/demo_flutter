@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,13 +7,17 @@ import 'package:responsive_demo/app_providers.dart';
 import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/dashboard_card.dart';
 import 'package:responsive_demo/dashboard_page.dart';
+import 'package:responsive_demo/pages/create_task_page.dart';
 import 'package:responsive_demo/settings_page.dart';
 import 'package:responsive_demo/tasks_page.dart';
+import 'package:responsive_demo/widgets/clickup_appbar_background.dart';
 import 'package:sqflite/sqflite.dart';
 
 void main() {
   runApp(ResponsiveDemoApp());
 }
+
+const double _fabDimension = 56.0;
 
 class ResponsiveDemoApp extends StatelessWidget {
   @override
@@ -108,7 +113,7 @@ class _MainPageState extends State<MainPage> {
           child: ThemeSwitcher(),
         ),
       ],
-      appBarFlexibaleSpace: _ClickUpAppBarBackground(),
+      appBarFlexibaleSpace: ClickUpAppBarBackground(),
       currentIndex: _pageIndex,
       destinations: [
         AdaptiveScaffoldDestination(title: 'Dashboard', icon: Icons.dashboard),
@@ -120,6 +125,42 @@ class _MainPageState extends State<MainPage> {
         setState(() {
           _pageIndex = newIndex;
         });
+      },
+      floatingActionButton: _hasFloatingActionButton ? _buildFab(context) : null,
+    );
+  }
+
+  bool get _hasFloatingActionButton {
+    if (_pageIndex == 1) return true;
+    return false;
+  }
+
+  Widget _buildFab(BuildContext context) {
+    ContainerTransitionType _transitionType = ContainerTransitionType.fade;
+
+    return OpenContainer(
+      transitionType: _transitionType,
+      openBuilder: (BuildContext context, VoidCallback _) {
+        return const CreateTaskPage();
+      },
+      closedElevation: 6.0,
+      closedShape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(_fabDimension / 2),
+        ),
+      ),
+      closedColor: Theme.of(context).colorScheme.secondary,
+      closedBuilder: (BuildContext context, VoidCallback openContainer) {
+        return SizedBox(
+          height: _fabDimension,
+          width: _fabDimension,
+          child: Center(
+            child: Icon(
+              Icons.add,
+              color: Theme.of(context).colorScheme.onSecondary,
+            ),
+          ),
+        );
       },
     );
   }
@@ -133,30 +174,6 @@ class _MainPageState extends State<MainPage> {
       default:
         return SettingsPage();
     }
-  }
-}
-
-class _ClickUpAppBarBackground extends StatelessWidget {
-  const _ClickUpAppBarBackground({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = CustomTheme.of(context);
-    final colors = context.watch<LightThemeNotifier>().isLight
-        ? <Color>[theme.gradientStart, theme.gradientEnd]
-        : <Color>[theme.gradientEnd, theme.gradientStart];
-    return AnimatedContainer(
-      duration: theme.transitionDuration,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: colors,
-        ),
-      ),
-    );
   }
 }
 

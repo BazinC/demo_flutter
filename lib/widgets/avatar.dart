@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_demo/model/models.dart';
+import 'package:responsive_demo/color_extention.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({Key key, this.user, this.size = 40, this.clippingRadiusFactor = 0.4})
@@ -19,36 +20,19 @@ class Avatar extends StatelessWidget {
       child: Container(
         height: size,
         width: size,
+        color: HexColor.fromHex(user.color),
         child: user.profilePicture != null
             ? CachedNetworkImage(
                 placeholder: (context, url) => CircularProgressIndicator(),
                 imageUrl: user.profilePicture,
-                errorWidget: (context, string, d) => Text(string),
-                imageBuilder: (context, imageProvider) => Test(
-                  imageProvider: imageProvider,
+                errorWidget: (context, string, d) => Text(
+                  string,
                 ),
+                // imageBuilder: (context, imageProvider) => Test(
+                //   imageProvider: imageProvider,
+                // ),
               )
             : _Initials(initials: user.initials),
-      ),
-    );
-  }
-}
-
-class Test extends StatelessWidget {
-  const Test({
-    Key key,
-    this.imageProvider,
-  }) : super(key: key);
-  final ImageProvider imageProvider;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // width: 10,
-      // height: 10,
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
       ),
     );
   }
@@ -61,8 +45,11 @@ class _Initials extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(initials),
+    return Center(
+      child: Text(
+        initials,
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+      ),
     );
   }
 }

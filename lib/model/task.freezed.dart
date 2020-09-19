@@ -16,8 +16,12 @@ class _$TaskTearOff {
   const _$TaskTearOff();
 
 // ignore: unused_element
-  _Task call(String id, String name, Status status, User creator,
-      {String orderindex,
+  _Task call(
+      {Status status,
+      User creator,
+      String id,
+      String name,
+      String orderindex,
       String description,
       @JsonKey(name: 'text_content') String textContent,
       List<User> assignees,
@@ -26,10 +30,10 @@ class _$TaskTearOff {
       String parent,
       List<Task> children = const <Task>[]}) {
     return _Task(
-      id,
-      name,
-      status,
-      creator,
+      status: status,
+      creator: creator,
+      id: id,
+      name: name,
       orderindex: orderindex,
       description: description,
       textContent: textContent,
@@ -46,10 +50,10 @@ class _$TaskTearOff {
 const $Task = _$TaskTearOff();
 
 mixin _$Task {
-  String get id;
-  String get name;
   Status get status;
   User get creator;
+  String get id;
+  String get name;
   String get orderindex;
   String get description;
   @JsonKey(name: 'text_content')
@@ -66,12 +70,13 @@ mixin _$Task {
 }
 
 abstract class $TaskCopyWith<$Res> {
-  factory $TaskCopyWith(Task value, $Res Function(Task) then) = _$TaskCopyWithImpl<$Res>;
+  factory $TaskCopyWith(Task value, $Res Function(Task) then) =
+      _$TaskCopyWithImpl<$Res>;
   $Res call(
-      {String id,
-      String name,
-      Status status,
+      {Status status,
       User creator,
+      String id,
+      String name,
       String orderindex,
       String description,
       @JsonKey(name: 'text_content') String textContent,
@@ -94,10 +99,10 @@ class _$TaskCopyWithImpl<$Res> implements $TaskCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
     Object status = freezed,
     Object creator = freezed,
+    Object id = freezed,
+    Object name = freezed,
     Object orderindex = freezed,
     Object description = freezed,
     Object textContent = freezed,
@@ -108,14 +113,18 @@ class _$TaskCopyWithImpl<$Res> implements $TaskCopyWith<$Res> {
     Object children = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
       status: status == freezed ? _value.status : status as Status,
       creator: creator == freezed ? _value.creator : creator as User,
-      orderindex: orderindex == freezed ? _value.orderindex : orderindex as String,
-      description: description == freezed ? _value.description : description as String,
-      textContent: textContent == freezed ? _value.textContent : textContent as String,
-      assignees: assignees == freezed ? _value.assignees : assignees as List<User>,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
+      orderindex:
+          orderindex == freezed ? _value.orderindex : orderindex as String,
+      description:
+          description == freezed ? _value.description : description as String,
+      textContent:
+          textContent == freezed ? _value.textContent : textContent as String,
+      assignees:
+          assignees == freezed ? _value.assignees : assignees as List<User>,
       watchers: watchers == freezed ? _value.watchers : watchers as List<User>,
       customId: customId == freezed ? _value.customId : customId as String,
       parent: parent == freezed ? _value.parent : parent as String,
@@ -145,13 +154,14 @@ class _$TaskCopyWithImpl<$Res> implements $TaskCopyWith<$Res> {
 }
 
 abstract class _$TaskCopyWith<$Res> implements $TaskCopyWith<$Res> {
-  factory _$TaskCopyWith(_Task value, $Res Function(_Task) then) = __$TaskCopyWithImpl<$Res>;
+  factory _$TaskCopyWith(_Task value, $Res Function(_Task) then) =
+      __$TaskCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String id,
-      String name,
-      Status status,
+      {Status status,
       User creator,
+      String id,
+      String name,
       String orderindex,
       String description,
       @JsonKey(name: 'text_content') String textContent,
@@ -167,18 +177,20 @@ abstract class _$TaskCopyWith<$Res> implements $TaskCopyWith<$Res> {
   $UserCopyWith<$Res> get creator;
 }
 
-class __$TaskCopyWithImpl<$Res> extends _$TaskCopyWithImpl<$Res> implements _$TaskCopyWith<$Res> {
-  __$TaskCopyWithImpl(_Task _value, $Res Function(_Task) _then) : super(_value, (v) => _then(v as _Task));
+class __$TaskCopyWithImpl<$Res> extends _$TaskCopyWithImpl<$Res>
+    implements _$TaskCopyWith<$Res> {
+  __$TaskCopyWithImpl(_Task _value, $Res Function(_Task) _then)
+      : super(_value, (v) => _then(v as _Task));
 
   @override
   _Task get _value => super._value as _Task;
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
     Object status = freezed,
     Object creator = freezed,
+    Object id = freezed,
+    Object name = freezed,
     Object orderindex = freezed,
     Object description = freezed,
     Object textContent = freezed,
@@ -189,14 +201,18 @@ class __$TaskCopyWithImpl<$Res> extends _$TaskCopyWithImpl<$Res> implements _$Ta
     Object children = freezed,
   }) {
     return _then(_Task(
-      id == freezed ? _value.id : id as String,
-      name == freezed ? _value.name : name as String,
-      status == freezed ? _value.status : status as Status,
-      creator == freezed ? _value.creator : creator as User,
-      orderindex: orderindex == freezed ? _value.orderindex : orderindex as String,
-      description: description == freezed ? _value.description : description as String,
-      textContent: textContent == freezed ? _value.textContent : textContent as String,
-      assignees: assignees == freezed ? _value.assignees : assignees as List<User>,
+      status: status == freezed ? _value.status : status as Status,
+      creator: creator == freezed ? _value.creator : creator as User,
+      id: id == freezed ? _value.id : id as String,
+      name: name == freezed ? _value.name : name as String,
+      orderindex:
+          orderindex == freezed ? _value.orderindex : orderindex as String,
+      description:
+          description == freezed ? _value.description : description as String,
+      textContent:
+          textContent == freezed ? _value.textContent : textContent as String,
+      assignees:
+          assignees == freezed ? _value.assignees : assignees as List<User>,
       watchers: watchers == freezed ? _value.watchers : watchers as List<User>,
       customId: customId == freezed ? _value.customId : customId as String,
       parent: parent == freezed ? _value.parent : parent as String,
@@ -207,8 +223,12 @@ class __$TaskCopyWithImpl<$Res> extends _$TaskCopyWithImpl<$Res> implements _$Ta
 
 @JsonSerializable()
 class _$_Task with DiagnosticableTreeMixin implements _Task {
-  _$_Task(this.id, this.name, this.status, this.creator,
-      {this.orderindex,
+  _$_Task(
+      {this.status,
+      this.creator,
+      this.id,
+      this.name,
+      this.orderindex,
       this.description,
       @JsonKey(name: 'text_content') this.textContent,
       this.assignees,
@@ -216,22 +236,19 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
       @JsonKey(name: 'custom_id') this.customId,
       this.parent,
       this.children = const <Task>[]})
-      : assert(id != null),
-        assert(name != null),
-        assert(status != null),
-        assert(creator != null),
-        assert(children != null);
+      : assert(children != null);
 
-  factory _$_Task.fromJson(Map<String, dynamic> json) => _$_$_TaskFromJson(json);
+  factory _$_Task.fromJson(Map<String, dynamic> json) =>
+      _$_$_TaskFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String name;
   @override
   final Status status;
   @override
   final User creator;
+  @override
+  final String id;
+  @override
+  final String name;
   @override
   final String orderindex;
   @override
@@ -254,7 +271,7 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Task(id: $id, name: $name, status: $status, creator: $creator, orderindex: $orderindex, description: $description, textContent: $textContent, assignees: $assignees, watchers: $watchers, customId: $customId, parent: $parent, children: $children)';
+    return 'Task(status: $status, creator: $creator, id: $id, name: $name, orderindex: $orderindex, description: $description, textContent: $textContent, assignees: $assignees, watchers: $watchers, customId: $customId, parent: $parent, children: $children)';
   }
 
   @override
@@ -262,10 +279,10 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Task'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('creator', creator))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('orderindex', orderindex))
       ..add(DiagnosticsProperty('description', description))
       ..add(DiagnosticsProperty('textContent', textContent))
@@ -280,27 +297,47 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Task &&
-            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.creator, creator) || const DeepCollectionEquality().equals(other.creator, creator)) &&
-            (identical(other.orderindex, orderindex) || const DeepCollectionEquality().equals(other.orderindex, orderindex)) &&
-            (identical(other.description, description) || const DeepCollectionEquality().equals(other.description, description)) &&
-            (identical(other.textContent, textContent) || const DeepCollectionEquality().equals(other.textContent, textContent)) &&
-            (identical(other.assignees, assignees) || const DeepCollectionEquality().equals(other.assignees, assignees)) &&
-            (identical(other.watchers, watchers) || const DeepCollectionEquality().equals(other.watchers, watchers)) &&
-            (identical(other.customId, customId) || const DeepCollectionEquality().equals(other.customId, customId)) &&
-            (identical(other.parent, parent) || const DeepCollectionEquality().equals(other.parent, parent)) &&
-            (identical(other.children, children) || const DeepCollectionEquality().equals(other.children, children)));
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.creator, creator) ||
+                const DeepCollectionEquality()
+                    .equals(other.creator, creator)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.orderindex, orderindex) ||
+                const DeepCollectionEquality()
+                    .equals(other.orderindex, orderindex)) &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.textContent, textContent) ||
+                const DeepCollectionEquality()
+                    .equals(other.textContent, textContent)) &&
+            (identical(other.assignees, assignees) ||
+                const DeepCollectionEquality()
+                    .equals(other.assignees, assignees)) &&
+            (identical(other.watchers, watchers) ||
+                const DeepCollectionEquality()
+                    .equals(other.watchers, watchers)) &&
+            (identical(other.customId, customId) ||
+                const DeepCollectionEquality()
+                    .equals(other.customId, customId)) &&
+            (identical(other.parent, parent) ||
+                const DeepCollectionEquality().equals(other.parent, parent)) &&
+            (identical(other.children, children) ||
+                const DeepCollectionEquality()
+                    .equals(other.children, children)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(creator) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(orderindex) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(textContent) ^
@@ -311,7 +348,8 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
       const DeepCollectionEquality().hash(children);
 
   @override
-  _$TaskCopyWith<_Task> get copyWith => __$TaskCopyWithImpl<_Task>(this, _$identity);
+  _$TaskCopyWith<_Task> get copyWith =>
+      __$TaskCopyWithImpl<_Task>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -320,8 +358,12 @@ class _$_Task with DiagnosticableTreeMixin implements _Task {
 }
 
 abstract class _Task implements Task {
-  factory _Task(String id, String name, Status status, User creator,
-      {String orderindex,
+  factory _Task(
+      {Status status,
+      User creator,
+      String id,
+      String name,
+      String orderindex,
       String description,
       @JsonKey(name: 'text_content') String textContent,
       List<User> assignees,
@@ -333,13 +375,13 @@ abstract class _Task implements Task {
   factory _Task.fromJson(Map<String, dynamic> json) = _$_Task.fromJson;
 
   @override
-  String get id;
-  @override
-  String get name;
-  @override
   Status get status;
   @override
   User get creator;
+  @override
+  String get id;
+  @override
+  String get name;
   @override
   String get orderindex;
   @override

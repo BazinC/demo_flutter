@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_demo/cubit/cubit/create_task_cubit.dart';
 import 'package:responsive_demo/data_providers/api_client.dart';
 import 'package:responsive_demo/main.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
@@ -36,6 +37,7 @@ class AppProviders extends StatelessWidget {
             ..databaseProvider = databaseProvider,
         ),
         BlocProvider(create: (context) => TasksCubit(Provider.of<TaskRepository>(context, listen: false))..getTasks(defaultListID)),
+        BlocProvider(create: (context) => CreateTaskCubit(Provider.of<TaskRepository>(context, listen: false))),
         ChangeNotifierProvider<LightThemeNotifier>(
           create: (context) => LightThemeNotifier(),
         ),

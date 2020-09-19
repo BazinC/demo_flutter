@@ -26,4 +26,12 @@ class TaskRepository {
 
     return result;
   }
+
+  Future<Task> createTask(Task task, int listId) {
+    return apiClient.createTask(task, listId);
+  }
+
+  Future<bool> deleteTask(Task task) {
+    return apiClient.deleteTask(task);
+  }
 }

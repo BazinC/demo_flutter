@@ -48,4 +48,22 @@ class TasksCubit extends Cubit<TasksState> {
       emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?"));
     }
   }
+
+  Future<void> deleteTask(Task task) async {
+    try {
+      emit(Loading(tasks));
+      final taskDeleted = await _taskRepository.deleteTask(task);
+      if (taskDeleted) {
+        emit(Loaded(tasks..remove(task)));
+      } else {
+        emit(Error("Failed to delete task"));
+      }
+    } on ApiClientException catch (e) {
+      emit(Error("Failed to delete task. (API error. $e)"));
+    } on SocketException {
+      emit(Error("Failed to delete task. Is the device online?"));
+    } on TimeoutException {
+      emit(Error("Failed to delete task. (Timeout) Is the device online?"));
+    }
+  }
 }

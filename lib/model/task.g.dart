@@ -8,14 +8,14 @@ part of 'task.dart';
 
 _$_Task _$_$_TaskFromJson(Map<String, dynamic> json) {
   return _$_Task(
-    json['id'] as String,
-    json['name'] as String,
-    json['status'] == null
+    status: json['status'] == null
         ? null
         : Status.fromJson(json['status'] as Map<String, dynamic>),
-    json['creator'] == null
+    creator: json['creator'] == null
         ? null
         : User.fromJson(json['creator'] as Map<String, dynamic>),
+    id: json['id'] as String,
+    name: json['name'] as String,
     orderindex: json['orderindex'] as String,
     description: json['description'] as String,
     textContent: json['text_content'] as String,
@@ -38,10 +38,10 @@ _$_Task _$_$_TaskFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$_$_TaskToJson(_$_Task instance) => <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
       'status': instance.status,
       'creator': instance.creator,
+      'id': instance.id,
+      'name': instance.name,
       'orderindex': instance.orderindex,
       'description': instance.description,
       'text_content': instance.textContent,

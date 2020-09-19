@@ -6,6 +6,8 @@ import 'dart:io';
 
 import 'package:responsive_demo/model/models.dart';
 
+import '../globals.dart';
+
 /// The exception thrown when a called to the API has
 /// not been successful.
 class ApiClientException implements Exception {
@@ -22,6 +24,7 @@ class ApiClientException implements Exception {
 }
 
 const Duration _defaultTimeoutDuration = Duration(seconds: 3);
+const String defaultPrivateApiKey = 'pk_4758571_GD33Z03NGQFFE7O90XQC2PNIF011FHLW';
 
 /// A provider that fetches data from an API.
 class ApiClient {
@@ -56,23 +59,24 @@ class ApiClient {
     return flatTaskList.toStructuredList();
   }
 
+  Future<Task> createTask(Task task, int listId) {
+    return _post<Task>('/list/$listId/task', task.toJson(), deserializer: (json) => Task.fromJson(json));
+  }
+
+  Future<bool> deleteTask(Task task) async {
+    final result = await _delete('/task/${task.id}');
+    return result;
+  }
+
   Future<T> _get<T>(
     String url, {
     T Function(dynamic) deserializer,
     Map<String, String> queryParameters,
   }) async {
-    final uri = Uri.https(
-      _authority,
-      '$_baseUrl$url',
-      queryParameters,
-    );
+    final uri = _buildDefaultUri(url, queryParameters);
+    logger.i('uri: $uri');
 
-    print('uri: $uri');
-
-    Map<String, String> headers = {
-      HttpHeaders.contentTypeHeader: 'application/json',
-    };
-    headers[HttpHeaders.authorizationHeader] = 'pk_4758571_GD33Z03NGQFFE7O90XQC2PNIF011FHLW';
+    final headers = _buildDefaultHeader();
 
     final response = await _client.get(uri, headers: headers).timeout(_defaultTimeoutDuration);
     print('$response');
@@ -82,5 +86,55 @@ class ApiClient {
     } else {
       throw ApiClientException._(code: response.statusCode);
     }
+  }
+
+  Future<T> _post<T>(
+    String url,
+    Object body, {
+    Map<String, String> queryParameters,
+    T Function(dynamic) deserializer,
+  }) async {
+    final effectiveBody = body == null ? null : utf8.encode(json.encode(body));
+
+    Map<String, String> headers = _buildDefaultHeader();
+
+    final uri = _buildDefaultUri(url, queryParameters);
+
+    final response = await _client.post(uri, headers: headers, body: effectiveBody).timeout(_defaultTimeoutDuration);
+    print('$response');
+    if (response.statusCode == HttpStatus.ok) {
+      final json = jsonDecode(response.body);
+      return deserializer(json);
+    } else {
+      throw ApiClientException._(code: response.statusCode);
+    }
+  }
+
+  Future<bool> _delete<T>(String url) async {
+    final headers = _buildDefaultHeader();
+    final uri = _buildDefaultUri(url, null);
+
+    final response = await _client.delete(uri, headers: headers).timeout(_defaultTimeoutDuration);
+    print('$response');
+    if (response.statusCode == HttpStatus.ok) {
+      return true;
+    } else {
+      throw ApiClientException._(code: response.statusCode);
+    }
+  }
+
+  Uri _buildDefaultUri(String url, Map<String, String> queryParameters) {
+    return Uri.https(
+      _authority,
+      '$_baseUrl$url',
+      queryParameters,
+    );
+  }
+
+  Map<String, String> _buildDefaultHeader() {
+    return {
+      HttpHeaders.contentTypeHeader: 'application/json',
+      HttpHeaders.authorizationHeader: defaultPrivateApiKey,
+    };
   }
 }

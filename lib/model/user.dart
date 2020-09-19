@@ -24,7 +24,7 @@ abstract class User with _$User {
       color: map[DatabaseProvider.COLUMN_USER_COLOR],
       profilePicture: map[DatabaseProvider.COLUMN_USER_PROFILE_PICTURE],
       email: map[DatabaseProvider.COLUMN_USER_EMAIL],
-      initials: map[DatabaseProvider.COLUMN_USER_EMAIL],
+      initials: map[DatabaseProvider.COLUMN_USER_INITIALS],
     );
   }
 }

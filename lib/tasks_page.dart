@@ -2,8 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_demo/color_extention.dart';
 import 'package:responsive_demo/cubit/cubit/tasks_cubit.dart';
 import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/dashboard_card.dart';
@@ -25,7 +27,16 @@ class TasksPage extends StatelessWidget {
         onRefresh: () async {
           await context.bloc<TasksCubit>().refreshTasks(defaultListID);
         },
-        child: BlocBuilder<TasksCubit, TasksState>(
+        child: BlocConsumer<TasksCubit, TasksState>(
+            listener: (context, state) {
+              if (state is Error) {
+                Scaffold.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(state.message),
+                  ),
+                );
+              }
+            },
             builder: (context, state) => state.when(
                   inital: () => Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -139,73 +150,129 @@ class _TaskRowState extends State<_TaskRow> with SingleTickerProviderStateMixin 
   @override
   Widget build(BuildContext context) {
     final assignees = (widget.task.assignees != null && widget.task.assignees.length > 0) ? widget.task.assignees : null;
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          folded = !folded;
-        });
-      },
-      child: DashboardCard(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                // color: Colors.red,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Visibility(
-                            maintainSize: true,
-                            maintainAnimation: true,
-                            maintainState: true,
-                            visible: widget.task.children.isNotEmpty,
-                            child: Container(
-                              // color: Colors.green,
-                              child: AnimatedRotation(
-                                rotated: !folded,
-                                turns: 0.25,
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: CustomTheme.of(context).primary.withOpacity(0.6),
+    // return Slidable(
+    //   actionPane: SlidableDrawerActionPane(),
+    //   actionExtentRatio: 0.25,
+    //   child: Container(
+    //     color: Colors.white,
+    //     child: ListTile(
+    //       leading: CircleAvatar(
+    //         backgroundColor: Colors.indigoAccent,
+    //         child: Text('s'),
+    //         foregroundColor: Colors.white,
+    //       ),
+    //       title: Text('Tile n°s'),
+    //       subtitle: Text('SlidableDrawerDelegate'),
+    //     ),
+    //   ),
+    //   actions: <Widget>[
+    //     IconSlideAction(
+    //       caption: 'Archive',
+    //       color: Colors.blue,
+    //       icon: Icons.archive,
+    //       onTap: () => null,
+    //     ),
+    //     IconSlideAction(
+    //       caption: 'Share',
+    //       color: Colors.indigo,
+    //       icon: Icons.share,
+    //       onTap: () => null,
+    //     ),
+    //   ],
+    //   secondaryActions: <Widget>[
+    //     IconSlideAction(
+    //       caption: 'More',
+    //       color: Colors.black45,
+    //       icon: Icons.more_horiz,
+    //       onTap: () => null,
+    //     ),
+    //     IconSlideAction(
+    //       caption: 'Delete',
+    //       color: Colors.red,
+    //       icon: Icons.delete,
+    //       onTap: () => null,
+    //     ),
+    //   ],
+    // );
+    return Slidable(
+      actionPane: SlidableDrawerActionPane(),
+      actionExtentRatio: 0.20,
+      secondaryActions: <Widget>[
+        IconSlideAction(
+          caption: 'Delete',
+          color: Colors.red,
+          icon: Icons.delete,
+          onTap: () => context.bloc<TasksCubit>().deleteTask(widget.task),
+        ),
+      ],
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            folded = !folded;
+          });
+        },
+        child: DashboardCard(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  // color: Colors.red,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Visibility(
+                              maintainSize: true,
+                              maintainAnimation: true,
+                              maintainState: true,
+                              visible: widget.task.children.isNotEmpty,
+                              child: Container(
+                                // color: Colors.green,
+                                child: AnimatedRotation(
+                                  rotated: !folded,
+                                  turns: 0.25,
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: CustomTheme.of(context).primary.withOpacity(0.6),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                          Flexible(
-                              child: Container(
-                            // color: Colors.pink,
-                            child: Text(widget.task.name),
-                          )),
-                        ],
+                            Flexible(
+                                child: Container(
+                              // color: Colors.pink,
+                              child: Text(widget.task.name),
+                            )),
+                          ],
+                        ),
                       ),
-                    ),
-                    assignees != null
-                        ? Avatar(
-                            clippingRadiusFactor: 0.5,
-                            size: 40,
-                            user: assignees?.first,
-                          )
-                        : SizedBox(
-                            height: 40,
-                            width: 40,
-                          ),
-                  ],
-                ),
-              ),
-              if (widget.task.children.isNotEmpty)
-                AnimatedSizeFactor(
-                  fullSized: !folded,
-                  child: _SubTaskList(
-                    subtasks: widget.task.children,
+                      assignees != null
+                          ? Avatar(
+                              clippingRadiusFactor: 0.5,
+                              size: 40,
+                              user: assignees?.first,
+                            )
+                          : SizedBox(
+                              height: 40,
+                              width: 40,
+                            ),
+                    ],
                   ),
-                )
-            ],
+                ),
+                if (widget.task.children.isNotEmpty)
+                  AnimatedSizeFactor(
+                    fullSized: !folded,
+                    child: _SubTaskList(
+                      subtasks: widget.task.children,
+                    ),
+                  )
+              ],
+            ),
           ),
         ),
       ),
@@ -266,21 +333,4 @@ class _GroupHeader extends StatelessWidget {
 Color _statusColorToColor(Task task) {
   final res = int.parse(task.status.color);
   return Color(res);
-}
-
-extension HexColor on Color {
-  /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
-  static Color fromHex(String hexString) {
-    final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
-  }
-
-  /// Prefixes a hash sign if [leadingHashSign] is set to `true` (default is `true`).
-  String toHex({bool leadingHashSign = true}) => '${leadingHashSign ? '#' : ''}'
-      '${alpha.toRadixString(16).padLeft(2, '0')}'
-      '${red.toRadixString(16).padLeft(2, '0')}'
-      '${green.toRadixString(16).padLeft(2, '0')}'
-      '${blue.toRadixString(16).padLeft(2, '0')}';
 }

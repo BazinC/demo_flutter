@@ -4,6 +4,8 @@
 
 import 'package:flutter/material.dart';
 
+// Copied from https://github.com/flutter/samples/blob/master/experimental/web_dashboard/lib/src/pages/home.dart
+
 bool _isLargeScreen(BuildContext context) {
   return MediaQuery.of(context).size.width > 960.0;
 }
@@ -33,7 +35,7 @@ class AdaptiveScaffold extends StatefulWidget {
   final int currentIndex;
   final List<AdaptiveScaffoldDestination> destinations;
   final ValueChanged<int> onNavigationIndexChange;
-  final FloatingActionButton floatingActionButton;
+  final Widget floatingActionButton;
   final Widget appBarFlexibaleSpace;
 
   AdaptiveScaffold({
