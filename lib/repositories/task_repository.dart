@@ -27,11 +27,24 @@ class TaskRepository {
     return result;
   }
 
-  Future<Task> createTask(Task task, int listId) {
-    return apiClient.createTask(task, listId);
+  Future<Task> createTask(Task task, int listId) async {
+    final createdTask = await apiClient.createTask(task, listId);
+    await databaseProvider.insertTask(createdTask);
+    return createdTask;
   }
 
-  Future<bool> deleteTask(Task task) {
-    return apiClient.deleteTask(task);
+  Future<bool> deleteTask(Task task) async {
+    final deleted = await apiClient.deleteTask(task);
+    if (deleted) {
+      try {
+        final deletedFromDatabase = await databaseProvider.deleteTask(task);
+        logger.i('Task ${task.id} deleted from database : $deletedFromDatabase');
+        return deletedFromDatabase;
+      } on Exception catch (e) {
+        logger.e(e);
+        return false;
+      }
+    }
+    return false;
   }
 }

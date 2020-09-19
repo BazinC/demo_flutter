@@ -60,10 +60,14 @@ class ApiClient {
   }
 
   Future<Task> createTask(Task task, int listId) {
-    return _post<Task>('/list/$listId/task', task.toJson(), deserializer: (json) => Task.fromJson(json));
+    final taskJson = task.toJson();
+    taskJson['status'] = task.status.status;
+
+    return _post<Task>('/list/$listId/task', taskJson, deserializer: (json) => Task.fromJson(json));
   }
 
   Future<bool> deleteTask(Task task) async {
+    await Future.delayed(Duration(seconds: 1));
     final result = await _delete('/task/${task.id}');
     return result;
   }

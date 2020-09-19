@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_demo/adaptive_scaffold.dart';
 import 'package:responsive_demo/app_providers.dart';
+import 'package:responsive_demo/cubit/cubit/status_cubit.dart';
 import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/dashboard_card.dart';
 import 'package:responsive_demo/dashboard_page.dart';
@@ -11,7 +12,7 @@ import 'package:responsive_demo/pages/create_task_page.dart';
 import 'package:responsive_demo/settings_page.dart';
 import 'package:responsive_demo/tasks_page.dart';
 import 'package:responsive_demo/widgets/clickup_appbar_background.dart';
-import 'package:sqflite/sqflite.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(ResponsiveDemoApp());
@@ -141,6 +142,7 @@ class _MainPageState extends State<MainPage> {
     return OpenContainer(
       transitionType: _transitionType,
       openBuilder: (BuildContext context, VoidCallback _) {
+        context.bloc<StatusCubit>().getStatusList();
         return const CreateTaskPage();
       },
       closedElevation: 6.0,

@@ -44,7 +44,12 @@ class TasksPage extends StatelessWidget {
                   ),
 
                   // loading: (tasks) => _IdleTaskList(tasks: tasks),
-                  loading: (tasks) => CircularProgressIndicator(),
+                  // loading: (tasks) => CircularProgressIndicator(),
+                  loading: (tasks) => _TaskList(
+                    tasks: tasks,
+                    loading: true,
+                    key: ValueKey(defaultListID),
+                  ),
                   // loading: (tasks) => _TaskList(
                   //   tasks: tasks,
                   //   key: ValueKey(defaultListID),
@@ -53,10 +58,19 @@ class TasksPage extends StatelessWidget {
                     tasks: tasks,
                     key: ValueKey(defaultListID),
                   ),
-                  error: (text) => Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text(text), _ReloadButton()],
-                  ),
+                  error: (text, tasks) {
+                    if (tasks != null && tasks.isNotEmpty) {
+                      return _TaskList(
+                        tasks: tasks,
+                        key: ValueKey(defaultListID),
+                      );
+                    } else {
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [Text(text), _ReloadButton()],
+                      );
+                    }
+                  },
                 )),
       ),
     );
@@ -78,57 +92,80 @@ class _ReloadButton extends StatelessWidget {
 }
 
 class _TaskList extends StatefulWidget {
-  _TaskList({Key key, this.tasks}) : super(key: key);
+  _TaskList({Key key, this.tasks, this.loading = false}) : super(key: key);
   final List<Task> tasks;
+  final bool loading;
 
   @override
   _TaskListState createState() => _TaskListState();
 }
 
 class _TaskListState extends State<_TaskList> {
-  final List<Task> tasks = <Task>[];
+  // final List<Task> tasks = <Task>[];
 
-  @override
-  void initState() {
-    super.initState();
-    initTaskList(widget.tasks);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // initTaskList(widget.tasks);
+  // }
 
-  void initTaskList(List<Task> taskList) {
-    tasks.clear();
-    tasks.addAll(taskList
-      ..sort((taskB, taskA) {
-        if (taskA.status.orderindex == taskB.status.orderindex) {
-          return taskA.orderindex.compareTo(taskB.orderindex);
-        }
-        return taskA.status.orderindex.compareTo(taskB.status.orderindex);
-      }));
-  }
+  // void initTaskList(List<Task> taskList) {
+  //   tasks.clear();
+  //   tasks.addAll(taskList
+  //     ..sort((taskB, taskA) {
+  //       if (taskA.status.orderindex == taskB.status.orderindex) {
+  //         return taskA.orderindex.compareTo(taskB.orderindex);
+  //       }
+  //       return taskA.status.orderindex.compareTo(taskB.status.orderindex);
+  //     }));
+  // }
 
-  @override
-  void didUpdateWidget(_TaskList oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.tasks != widget.tasks) {
-      initTaskList(widget.tasks);
-    }
-  }
+  // @override
+  // void didUpdateWidget(_TaskList oldWidget) {
+  //   if (oldWidget.tasks != widget.tasks) {
+  //     initTaskList(widget.tasks);
+  //   }
+  //   super.didUpdateWidget(oldWidget);
+  // }
+
+  // @override
+  // void didChangeDependencies() {
+  //   initTaskList(widget.tasks);
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return GroupedListView<Task, String>(
-        // elements: widget.tasks,
-        elements: tasks,
-        groupBy: (task) => task.status.status,
-        groupHeaderBuilder: (Task task) => _GroupHeader(
-              task: task,
-            ),
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        sort: false,
-        // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
-        itemBuilder: (context, Task task) => _TaskRow(task: task),
-        separator: SizedBox(
-          height: 10,
-        ));
+    return Stack(
+      children: [
+        GroupedListView<Task, String>(
+            // elements: widget.tasks,
+            // elements: tasks,
+            elements: widget.tasks
+              ..sort((taskB, taskA) {
+                if (taskA.status.orderindex == taskB.status.orderindex) {
+                  return taskA.orderindex.compareTo(taskB.orderindex);
+                }
+                return taskA.status.orderindex.compareTo(taskB.status.orderindex);
+              }),
+            groupBy: (task) => task.status.status,
+            groupHeaderBuilder: (Task task) => _GroupHeader(
+                  task: task,
+                ),
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            sort: false,
+            // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
+            // itemBuilder: (context, Task task) => _TaskRow(task: task, key: ValueKey(task.id)),
+            itemBuilder: (context, Task task) => _TaskRow(task: task, key: UniqueKey()),
+            separator: SizedBox(
+              height: 10,
+            )),
+        Visibility(
+          visible: widget.loading,
+          child: Center(child: CircularProgressIndicator()),
+        )
+      ],
+    );
   }
 }
 
@@ -150,50 +187,6 @@ class _TaskRowState extends State<_TaskRow> with SingleTickerProviderStateMixin 
   @override
   Widget build(BuildContext context) {
     final assignees = (widget.task.assignees != null && widget.task.assignees.length > 0) ? widget.task.assignees : null;
-    // return Slidable(
-    //   actionPane: SlidableDrawerActionPane(),
-    //   actionExtentRatio: 0.25,
-    //   child: Container(
-    //     color: Colors.white,
-    //     child: ListTile(
-    //       leading: CircleAvatar(
-    //         backgroundColor: Colors.indigoAccent,
-    //         child: Text('s'),
-    //         foregroundColor: Colors.white,
-    //       ),
-    //       title: Text('Tile n°s'),
-    //       subtitle: Text('SlidableDrawerDelegate'),
-    //     ),
-    //   ),
-    //   actions: <Widget>[
-    //     IconSlideAction(
-    //       caption: 'Archive',
-    //       color: Colors.blue,
-    //       icon: Icons.archive,
-    //       onTap: () => null,
-    //     ),
-    //     IconSlideAction(
-    //       caption: 'Share',
-    //       color: Colors.indigo,
-    //       icon: Icons.share,
-    //       onTap: () => null,
-    //     ),
-    //   ],
-    //   secondaryActions: <Widget>[
-    //     IconSlideAction(
-    //       caption: 'More',
-    //       color: Colors.black45,
-    //       icon: Icons.more_horiz,
-    //       onTap: () => null,
-    //     ),
-    //     IconSlideAction(
-    //       caption: 'Delete',
-    //       color: Colors.red,
-    //       icon: Icons.delete,
-    //       onTap: () => null,
-    //     ),
-    //   ],
-    // );
     return Slidable(
       actionPane: SlidableDrawerActionPane(),
       actionExtentRatio: 0.20,

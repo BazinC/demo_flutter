@@ -245,6 +245,36 @@ class DatabaseProvider {
     });
   }
 
+  Future<bool> deleteTask(Task task) async {
+    final db = await database;
+    final affectedRow = await db.delete(TABLE_TASK, where: '$COLUMN_TASK_ID = ?', whereArgs: [task.id]);
+    return affectedRow > 0;
+  }
+
+  Future<void> insertTask(Task task) async {
+    final db = await database;
+    await db.insert(TABLE_TASK, task.toMap());
+  }
+
+  Future<List<Status>> getStatus() async {
+    final db = await database;
+    List<Status> statusList = [];
+    List<Map> statusMaps = await db.query(
+      TABLE_STATUS,
+      // columns: [columnId, columnDone, columnTitle],
+      // where: '$columnId = ?',
+      // whereArgs: [id]
+    );
+    if (statusMaps.length > 0) {
+      for (Map<String, dynamic> statusMap in statusMaps) {
+        statusList.add(Status.fromMap(statusMap));
+      }
+      ;
+    }
+
+    return statusList;
+  }
+
   Future<void> close() async {
     final db = await database;
     logger.i('closing db');

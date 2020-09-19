@@ -32,9 +32,10 @@ class _$TasksStateTearOff {
   }
 
 // ignore: unused_element
-  Error error(String message) {
+  Error error(String message, List<Task> tasks) {
     return Error(
       message,
+      tasks,
     );
   }
 }
@@ -48,14 +49,14 @@ mixin _$TasksState {
     @required Result inital(),
     @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
-    @required Result error(String message),
+    @required Result error(String message, List<Task> tasks),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result inital(),
     Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
-    Result error(String message),
+    Result error(String message, List<Task> tasks),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -125,7 +126,7 @@ class _$Initial implements Initial {
     @required Result inital(),
     @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
-    @required Result error(String message),
+    @required Result error(String message, List<Task> tasks),
   }) {
     assert(inital != null);
     assert(loading != null);
@@ -140,7 +141,7 @@ class _$Initial implements Initial {
     Result inital(),
     Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
-    Result error(String message),
+    Result error(String message, List<Task> tasks),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -244,7 +245,7 @@ class _$Loading implements Loading {
     @required Result inital(),
     @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
-    @required Result error(String message),
+    @required Result error(String message, List<Task> tasks),
   }) {
     assert(inital != null);
     assert(loading != null);
@@ -259,7 +260,7 @@ class _$Loading implements Loading {
     Result inital(),
     Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
-    Result error(String message),
+    Result error(String message, List<Task> tasks),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -365,7 +366,7 @@ class _$Loaded implements Loaded {
     @required Result inital(),
     @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
-    @required Result error(String message),
+    @required Result error(String message, List<Task> tasks),
   }) {
     assert(inital != null);
     assert(loading != null);
@@ -380,7 +381,7 @@ class _$Loaded implements Loaded {
     Result inital(),
     Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
-    Result error(String message),
+    Result error(String message, List<Task> tasks),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -432,7 +433,7 @@ abstract class Loaded implements TasksState {
 abstract class $ErrorCopyWith<$Res> {
   factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
       _$ErrorCopyWithImpl<$Res>;
-  $Res call({String message});
+  $Res call({String message, List<Task> tasks});
 }
 
 class _$ErrorCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
@@ -446,22 +447,28 @@ class _$ErrorCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object message = freezed,
+    Object tasks = freezed,
   }) {
     return _then(Error(
       message == freezed ? _value.message : message as String,
+      tasks == freezed ? _value.tasks : tasks as List<Task>,
     ));
   }
 }
 
 class _$Error implements Error {
-  const _$Error(this.message) : assert(message != null);
+  const _$Error(this.message, this.tasks)
+      : assert(message != null),
+        assert(tasks != null);
 
   @override
   final String message;
+  @override
+  final List<Task> tasks;
 
   @override
   String toString() {
-    return 'TasksState.error(message: $message)';
+    return 'TasksState.error(message: $message, tasks: $tasks)';
   }
 
   @override
@@ -469,12 +476,17 @@ class _$Error implements Error {
     return identical(this, other) ||
         (other is Error &&
             (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+                const DeepCollectionEquality()
+                    .equals(other.message, message)) &&
+            (identical(other.tasks, tasks) ||
+                const DeepCollectionEquality().equals(other.tasks, tasks)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(message) ^
+      const DeepCollectionEquality().hash(tasks);
 
   @override
   $ErrorCopyWith<Error> get copyWith =>
@@ -486,13 +498,13 @@ class _$Error implements Error {
     @required Result inital(),
     @required Result loading(List<Task> oldTasks),
     @required Result loaded(List<Task> tasks),
-    @required Result error(String message),
+    @required Result error(String message, List<Task> tasks),
   }) {
     assert(inital != null);
     assert(loading != null);
     assert(loaded != null);
     assert(error != null);
-    return error(message);
+    return error(message, tasks);
   }
 
   @override
@@ -501,12 +513,12 @@ class _$Error implements Error {
     Result inital(),
     Result loading(List<Task> oldTasks),
     Result loaded(List<Task> tasks),
-    Result error(String message),
+    Result error(String message, List<Task> tasks),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (error != null) {
-      return error(message);
+      return error(message, tasks);
     }
     return orElse();
   }
@@ -544,8 +556,9 @@ class _$Error implements Error {
 }
 
 abstract class Error implements TasksState {
-  const factory Error(String message) = _$Error;
+  const factory Error(String message, List<Task> tasks) = _$Error;
 
   String get message;
+  List<Task> get tasks;
   $ErrorCopyWith<Error> get copyWith;
 }

@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:http/http.dart';
 import 'package:responsive_demo/data_providers/api_client.dart';
 import 'package:responsive_demo/model/models.dart';
 import 'package:responsive_demo/repositories/task_repository.dart';
@@ -27,11 +28,15 @@ class TasksCubit extends Cubit<TasksState> {
       }
       emit(Loaded(tasks));
     } on ApiClientException catch (e) {
-      emit(Error("Couldn't fetch tasks. (API error. $e)"));
+      emit(Error("Couldn't fetch tasks. (API error. $e)", tasks));
     } on SocketException {
-      emit(Error("Couldn't fetch tasks. Is the device online?"));
+      emit(Error("Couldn't fetch tasks. Is the device online?", tasks));
     } on TimeoutException {
-      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?"));
+      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?", tasks));
+    } on ClientException catch (e) {
+      emit(Error("Couldn't fetch tasks. (Client exception: ${e.message}) Is the device online?", tasks));
+    } on Exception catch (e) {
+      emit(Error("Couldn't fetch tasks. (${e.toString()}) Is the device online?", tasks));
     }
   }
 
@@ -41,11 +46,33 @@ class TasksCubit extends Cubit<TasksState> {
       tasks = await _taskRepository.getTasks(listId, forceRefresh: true);
       emit(Loaded(tasks));
     } on ApiClientException catch (e) {
-      emit(Error("Couldn't fetch tasks. (API error. $e)"));
+      emit(Error("Couldn't fetch tasks. (API error. $e)", tasks));
     } on SocketException {
-      emit(Error("Couldn't fetch tasks. Is the device online?"));
+      emit(Error("Couldn't fetch tasks. Is the device online?", tasks));
     } on TimeoutException {
-      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?"));
+      emit(Error("Couldn't fetch tasks. (Timeout) Is the device online?", tasks));
+    } on ClientException catch (e) {
+      emit(Error("Couldn't fetch tasks. (Client exception: ${e.message}) Is the device online?", tasks));
+    } on Exception catch (e) {
+      emit(Error("Couldn't fetch tasks. (${e.toString()}) Is the device online?", tasks));
+    }
+  }
+
+  Future<void> createTask(String name, int listId, {String description, Status status}) async {
+    try {
+      emit(Loading(tasks));
+      final task = await _taskRepository.createTask(Task(name: name, description: description, status: Status(status: status.status)), listId);
+      emit(Loaded(tasks..add(task)));
+    } on ApiClientException catch (e) {
+      emit(Error("Couldn't create task. (API error. $e)", tasks));
+    } on SocketException {
+      emit(Error("Couldn't create task. Is the device online?", tasks));
+    } on TimeoutException {
+      emit(Error("Couldn't create task. (Timeout) Is the device online?", tasks));
+    } on ClientException catch (e) {
+      emit(Error("Couldn't create task. (Client exception: ${e.message}) Is the device online?", tasks));
+    } on Exception catch (e) {
+      emit(Error("Couldn't create task. (${e.toString()}) Is the device online?", tasks));
     }
   }
 
@@ -54,16 +81,20 @@ class TasksCubit extends Cubit<TasksState> {
       emit(Loading(tasks));
       final taskDeleted = await _taskRepository.deleteTask(task);
       if (taskDeleted) {
-        emit(Loaded(tasks..remove(task)));
+        print('${tasks.length}');
+        tasks = tasks..remove(task);
+        print('${tasks.length}');
+
+        emit(Loaded(tasks));
       } else {
-        emit(Error("Failed to delete task"));
+        emit(Error("Failed to delete task", tasks));
       }
     } on ApiClientException catch (e) {
-      emit(Error("Failed to delete task. (API error. $e)"));
+      emit(Error("Failed to delete task. (API error. $e)", tasks));
     } on SocketException {
-      emit(Error("Failed to delete task. Is the device online?"));
+      emit(Error("Failed to delete task. Is the device online?", tasks));
     } on TimeoutException {
-      emit(Error("Failed to delete task. (Timeout) Is the device online?"));
+      emit(Error("Failed to delete task. (Timeout) Is the device online?", tasks));
     }
   }
 }

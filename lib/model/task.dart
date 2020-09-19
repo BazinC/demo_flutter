@@ -30,12 +30,7 @@ abstract class Task with _$Task {
     return Task(
       id: map[DatabaseProvider.COLUMN_TASK_ID],
       name: map[DatabaseProvider.COLUMN_TASK_NAME],
-      status: Status(
-        status: map[DatabaseProvider.COLUMN_STATUS_ID],
-        color: map[DatabaseProvider.COLUMN_STATUS_COLOR],
-        type: map[DatabaseProvider.COLUMN_STATUS_TYPE],
-        orderindex: map[DatabaseProvider.COLUMN_STATUS_ORDER_INDEX],
-      ),
+      status: Status.fromMap(map),
       creator: User.fromMap(map),
       // User(
       //   map[DatabaseProvider.COLUMN_TASK_CREATOR_ID],
