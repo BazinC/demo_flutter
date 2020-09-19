@@ -1,0 +1,3416 @@
+{
+    "tasks": [
+        {
+            "id": "8autw4",
+            "custom_id": null,
+            "name": "bb",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "revision",
+                "color": "#ff540d",
+                "type": "custom",
+                "orderindex": 3
+            },
+            "orderindex": "11.00000000000000000000000000000000",
+            "date_created": "1600518205161",
+            "date_updated": "1600518205161",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/8autw4",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "8autnc",
+            "custom_id": null,
+            "name": "coucou",
+            "text_content": "co",
+            "description": "co",
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "19.00000000000000000000000000000000",
+            "date_created": "1600517906178",
+            "date_updated": "1600517906178",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/8autnc",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vzt7",
+            "custom_id": null,
+            "name": "Add orderindex in database (task and status)",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "5.00000000000000000000000000000000",
+            "date_created": "1600197583521",
+            "date_updated": "1600197734115",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vwby",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vzt7",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vwck",
+            "custom_id": null,
+            "name": "Animation transition",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "4.00000000000000000000000000000000",
+            "date_created": "1600194875836",
+            "date_updated": "1600194875836",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vwby",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vwck",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vwcb",
+            "custom_id": null,
+            "name": "From validation",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "3.00000000000000000000000000000000",
+            "date_created": "1600194869417",
+            "date_updated": "1600194869417",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vwby",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vwcb",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vwc4",
+            "custom_id": null,
+            "name": "Form UI",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "2.00000000000000000000000000000000",
+            "date_created": "1600194851571",
+            "date_updated": "1600194861755",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vwby",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vwc4",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vwc2",
+            "custom_id": null,
+            "name": "FAB",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "1.00000000000000000000000000000000",
+            "date_created": "1600194848431",
+            "date_updated": "1600194848431",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vwby",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vwc2",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vwby",
+            "custom_id": null,
+            "name": "Implement Create task feature",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "86.00000000000000000000000000000000",
+            "date_created": "1600194835626",
+            "date_updated": "1600194835626",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vwby",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vw93",
+            "custom_id": null,
+            "name": "Add \"left hand/right hand\" switch in settings",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "4.00000000000000000000000000000000",
+            "date_created": "1600194715589",
+            "date_updated": "1600194715589",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vw47",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vw93",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vw5a",
+            "custom_id": null,
+            "name": "edit",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "3.00000000000000000000000000000000",
+            "date_created": "1600194675803",
+            "date_updated": "1600194675803",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vw47",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vw5a",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vw54",
+            "custom_id": null,
+            "name": "delete",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "2.00000000000000000000000000000000",
+            "date_created": "1600194672974",
+            "date_updated": "1600194672974",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vw47",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vw54",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vw4x",
+            "custom_id": null,
+            "name": "mark as done",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "1.00000000000000000000000000000000",
+            "date_created": "1600194663833",
+            "date_updated": "1600194663833",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vw47",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vw4x",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vw47",
+            "custom_id": null,
+            "name": "Enable slidable actions on task list",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "85.00000000000000000000000000000000",
+            "date_created": "1600194643791",
+            "date_updated": "1600194643791",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vw47",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vvvc",
+            "custom_id": null,
+            "name": "Token refresh",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "84.00000000000000000000000000000000",
+            "date_created": "1600194318470",
+            "date_updated": "1600194318470",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vvvc",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vvqp",
+            "custom_id": null,
+            "name": "Enable remove data",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "83.00000000000000000000000000000000",
+            "date_created": "1600194271463",
+            "date_updated": "1600194271463",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vvqp",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vvpm",
+            "custom_id": null,
+            "name": "Implement Hive database",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "2.00000000000000000000000000000000",
+            "date_created": "1600194253493",
+            "date_updated": "1600194253493",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vvny",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vvpm",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vvp7",
+            "custom_id": null,
+            "name": "Write database interface",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "1.00000000000000000000000000000000",
+            "date_created": "1600194239861",
+            "date_updated": "1600194239861",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "86vvny",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vvp7",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "86vvny",
+            "custom_id": null,
+            "name": "Provide an alternative database for web",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "82.00000000000000000000000000000000",
+            "date_created": "1600194208763",
+            "date_updated": "1600194208763",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/86vvny",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "84u1rw",
+            "custom_id": null,
+            "name": "Create Progression Widget",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "2.00000000000000000000000000000000",
+            "date_created": "1600031120807",
+            "date_updated": "1600031120807",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": "84u1hr",
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/84u1rw",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "84u1hr",
+            "custom_id": null,
+            "name": "Make fancy animations",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "to do",
+                "color": "#a09d9d",
+                "type": "open",
+                "orderindex": 0
+            },
+            "orderindex": "80.00000000000000000000000000000000",
+            "date_created": "1600030770721",
+            "date_updated": "1600030770721",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 66.66666666666666
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/84u1hr",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u46a",
+            "custom_id": null,
+            "name": "Organize monthly marketing budget",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "14.90854559694777440000000000000000",
+            "date_created": "1599770803029",
+            "date_updated": "1599770803029",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "2",
+                "priority": "high",
+                "color": "#ffcc00",
+                "orderindex": "2"
+            },
+            "due_date": "1555959600000",
+            "start_date": "1555956000000",
+            "points": null,
+            "time_estimate": 3600000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 0
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u46a",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u469",
+            "custom_id": null,
+            "name": "New hire training",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "17.90854559694777440000000000000000",
+            "date_created": "1599770803007",
+            "date_updated": "1599770803007",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u469",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u468",
+            "custom_id": null,
+            "name": "Deploy new CRM",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "18.90854559694777440000000000000000",
+            "date_created": "1599770802974",
+            "date_updated": "1599770802974",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": null,
+            "due_date": null,
+            "start_date": null,
+            "points": null,
+            "time_estimate": null,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u468",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u467",
+            "custom_id": null,
+            "name": "Write feature blog post",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "revision",
+                "color": "#ff540d",
+                "type": "custom",
+                "orderindex": 3
+            },
+            "orderindex": "9.92406355828484600000000000000000",
+            "date_created": "1599770802949",
+            "date_updated": "1600468161725",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4776216,
+                    "username": "Bob Bazin",
+                    "color": "#81b1ff",
+                    "initials": "BB",
+                    "email": "corentin.bazin@hotmail.fr",
+                    "profilePicture": null
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "4",
+                "priority": "low",
+                "color": "#d8d8d8",
+                "orderindex": "4"
+            },
+            "due_date": "1556038800000",
+            "start_date": "1556031600000",
+            "points": null,
+            "time_estimate": 7200000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 0
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u467",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u466",
+            "custom_id": null,
+            "name": "Hire VP of marketing",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "16.90854559694777440000000000000000",
+            "date_created": "1599770802923",
+            "date_updated": "1599770802923",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "3",
+                "priority": "normal",
+                "color": "#6fddff",
+                "orderindex": "3"
+            },
+            "due_date": "1556319600000",
+            "start_date": "1556031600000",
+            "points": null,
+            "time_estimate": 288000000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 1
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u466",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u465",
+            "custom_id": null,
+            "name": "Draft new landing page",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "15.90854559694777440000000000000000",
+            "date_created": "1599770802892",
+            "date_updated": "1599770802892",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "2",
+                "priority": "high",
+                "color": "#ffcc00",
+                "orderindex": "2"
+            },
+            "due_date": "1555952400000",
+            "start_date": "1554116400000",
+            "points": null,
+            "time_estimate": 7200000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 2
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u465",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u464",
+            "custom_id": null,
+            "name": "Run productivity Adwords campaign",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "review",
+                "color": "#ffcf00",
+                "type": "custom",
+                "orderindex": 2
+            },
+            "orderindex": "11.42606692189214810000000000000000",
+            "date_created": "1599770802843",
+            "date_updated": "1599770802843",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "3",
+                "priority": "normal",
+                "color": "#6fddff",
+                "orderindex": "3"
+            },
+            "due_date": "1559347200000",
+            "start_date": "1555956000000",
+            "points": null,
+            "time_estimate": 21600000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 0
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u464",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u463",
+            "custom_id": null,
+            "name": "Set up Google Analytics funnel",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "in progress",
+                "color": "#08adff",
+                "type": "custom",
+                "orderindex": 1
+            },
+            "orderindex": "13.90854559694777440000000000000000",
+            "date_created": "1599770802782",
+            "date_updated": "1599770802782",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "1",
+                "priority": "urgent",
+                "color": "#f50000",
+                "orderindex": "1"
+            },
+            "due_date": "1555977600000",
+            "start_date": "1555959600000",
+            "points": null,
+            "time_estimate": 18000000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 1
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u463",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        },
+        {
+            "id": "82u462",
+            "custom_id": null,
+            "name": "Design new logos",
+            "text_content": null,
+            "description": null,
+            "status": {
+                "status": "revision",
+                "color": "#ff540d",
+                "type": "custom",
+                "orderindex": 3
+            },
+            "orderindex": "10.96037474659111000000000000000000",
+            "date_created": "1599770802736",
+            "date_updated": "1600007122338",
+            "date_closed": null,
+            "archived": false,
+            "creator": {
+                "id": 4758571,
+                "username": "Corentin Bazin",
+                "color": "#f42c2c",
+                "email": "crntnbzn@gmail.com",
+                "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+            },
+            "assignees": [
+                {
+                    "id": 4758571,
+                    "username": "Corentin Bazin",
+                    "color": "#f42c2c",
+                    "initials": "CB",
+                    "email": "crntnbzn@gmail.com",
+                    "profilePicture": "https://attachments.clickup.com/profilePictures/4758571_4mV.jpg"
+                }
+            ],
+            "watchers": [],
+            "checklists": [],
+            "tags": [],
+            "parent": null,
+            "priority": {
+                "id": "1",
+                "priority": "urgent",
+                "color": "#f50000",
+                "orderindex": "1"
+            },
+            "due_date": "1555956000000",
+            "start_date": "1555945200000",
+            "points": null,
+            "time_estimate": 10800000,
+            "custom_fields": [
+                {
+                    "id": "4441ca5f-1709-422d-b23a-bb82499b32a1",
+                    "name": "Department",
+                    "type": "drop_down",
+                    "type_config": {
+                        "default": 0,
+                        "placeholder": null,
+                        "new_drop_down": true,
+                        "options": [
+                            {
+                                "id": "8e410724-1002-4f52-acd4-e37b36d62eb5",
+                                "name": "Marketing",
+                                "color": "#3397dd",
+                                "orderindex": 0
+                            },
+                            {
+                                "id": "99a315cf-8d25-43d8-a5ad-d7ab33f324d9",
+                                "name": "Operations",
+                                "color": "#667684",
+                                "orderindex": 1
+                            },
+                            {
+                                "id": "8c007841-c9ee-4933-9379-28d67faad029",
+                                "name": "Design",
+                                "color": "#1bbc9c",
+                                "orderindex": 2
+                            }
+                        ]
+                    },
+                    "hide_from_guests": false,
+                    "value": 2
+                },
+                {
+                    "id": "b9689a6b-eeec-4e2c-ae78-d229719133b4",
+                    "name": "Progress",
+                    "type": "automatic_progress",
+                    "type_config": {
+                        "tracking": {
+                            "subtasks": true,
+                            "checklists": true,
+                            "assigned_comments": true
+                        },
+                        "complete_on": 3
+                    },
+                    "hide_from_guests": false,
+                    "value": {
+                        "percent_complete": 0
+                    }
+                }
+            ],
+            "dependencies": [],
+            "linked_tasks": [],
+            "team_id": "2612436",
+            "url": "https://app.clickup.com/t/82u462",
+            "permission_level": "create",
+            "list": {
+                "id": "27886327",
+                "name": "Action Items",
+                "access": true
+            },
+            "project": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "folder": {
+                "id": "13114753",
+                "name": "Task Management",
+                "hidden": false,
+                "access": true
+            },
+            "space": {
+                "id": "4646254"
+            }
+        }
+    ]
+}
