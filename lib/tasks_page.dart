@@ -91,77 +91,34 @@ class _ReloadButton extends StatelessWidget {
   }
 }
 
-class _TaskList extends StatefulWidget {
-  _TaskList({Key key, this.tasks, this.loading = false}) : super(key: key);
+class _TaskList extends StatelessWidget {
   final List<Task> tasks;
   final bool loading;
 
-  @override
-  _TaskListState createState() => _TaskListState();
-}
-
-class _TaskListState extends State<_TaskList> {
-  // final List<Task> tasks = <Task>[];
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   // initTaskList(widget.tasks);
-  // }
-
-  // void initTaskList(List<Task> taskList) {
-  //   tasks.clear();
-  //   tasks.addAll(taskList
-  //     ..sort((taskB, taskA) {
-  //       if (taskA.status.orderindex == taskB.status.orderindex) {
-  //         return taskA.orderindex.compareTo(taskB.orderindex);
-  //       }
-  //       return taskA.status.orderindex.compareTo(taskB.status.orderindex);
-  //     }));
-  // }
-
-  // @override
-  // void didUpdateWidget(_TaskList oldWidget) {
-  //   if (oldWidget.tasks != widget.tasks) {
-  //     initTaskList(widget.tasks);
-  //   }
-  //   super.didUpdateWidget(oldWidget);
-  // }
-
-  // @override
-  // void didChangeDependencies() {
-  //   initTaskList(widget.tasks);
-  //   super.didChangeDependencies();
-  // }
+  const _TaskList({
+    Key key,
+    this.tasks,
+    this.loading = false,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         GroupedListView<Task, String>(
-            // elements: widget.tasks,
-            // elements: tasks,
-            elements: widget.tasks
-              ..sort((taskB, taskA) {
-                if (taskA.status.orderindex == taskB.status.orderindex) {
-                  return taskA.orderindex.compareTo(taskB.orderindex);
-                }
-                return taskA.status.orderindex.compareTo(taskB.status.orderindex);
-              }),
+            elements: tasks,
             groupBy: (task) => task.status.status,
             groupHeaderBuilder: (Task task) => _GroupHeader(
                   task: task,
                 ),
             padding: EdgeInsets.symmetric(horizontal: 8),
             sort: false,
-            // groupSeparatorBuilder: (String groupByValue) => Text(groupByValue),
-            // itemBuilder: (context, Task task) => _TaskRow(task: task, key: ValueKey(task.id)),
             itemBuilder: (context, Task task) => _TaskRow(task: task, key: UniqueKey()),
             separator: SizedBox(
               height: 10,
             )),
         Visibility(
-          visible: widget.loading,
+          visible: loading,
           child: Center(child: CircularProgressIndicator()),
         )
       ],
@@ -210,52 +167,42 @@ class _TaskRowState extends State<_TaskRow> with SingleTickerProviderStateMixin 
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  // color: Colors.red,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Visibility(
-                              maintainSize: true,
-                              maintainAnimation: true,
-                              maintainState: true,
-                              visible: widget.task.children.isNotEmpty,
-                              child: Container(
-                                // color: Colors.green,
-                                child: AnimatedRotation(
-                                  rotated: !folded,
-                                  turns: 0.25,
-                                  child: Icon(
-                                    Icons.arrow_forward_ios,
-                                    color: CustomTheme.of(context).primary.withOpacity(0.6),
-                                  ),
-                                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Visibility(
+                            maintainSize: true,
+                            maintainAnimation: true,
+                            maintainState: true,
+                            visible: widget.task.children.isNotEmpty,
+                            child: AnimatedRotation(
+                              rotated: !folded,
+                              turns: 0.25,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                color: CustomTheme.of(context).primary.withOpacity(0.6),
                               ),
                             ),
-                            Flexible(
-                                child: Container(
-                              // color: Colors.pink,
-                              child: Text(widget.task.name),
-                            )),
-                          ],
-                        ),
+                          ),
+                          Flexible(child: Text(widget.task.name)),
+                        ],
                       ),
-                      assignees != null
-                          ? Avatar(
-                              clippingRadiusFactor: 0.5,
-                              size: 40,
-                              user: assignees?.first,
-                            )
-                          : SizedBox(
-                              height: 40,
-                              width: 40,
-                            ),
-                    ],
-                  ),
+                    ),
+                    assignees != null
+                        ? Avatar(
+                            clippingRadiusFactor: 0.5,
+                            size: 40,
+                            user: assignees?.first,
+                          )
+                        : SizedBox(
+                            height: 40,
+                            width: 40,
+                          ),
+                  ],
                 ),
                 if (widget.task.children.isNotEmpty)
                   AnimatedSizeFactor(
@@ -308,22 +255,21 @@ class _GroupHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Row(
-        children: [
-          Container(
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Container(
+            decoration: BoxDecoration(
               color: HexColor.fromHex(task.status.color),
-              child: Text(
-                task.status.status,
-                style: TextStyle(color: Colors.white),
-              )),
-        ],
-      ),
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+            margin: EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
+            child: Text(
+              task.status.status.toUpperCase(),
+              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
+            )),
+      ],
     );
   }
-}
-
-Color _statusColorToColor(Task task) {
-  final res = int.parse(task.status.color);
-  return Color(res);
 }

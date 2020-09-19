@@ -13,6 +13,7 @@ import 'package:responsive_demo/settings_page.dart';
 import 'package:responsive_demo/tasks_page.dart';
 import 'package:responsive_demo/widgets/clickup_appbar_background.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(ResponsiveDemoApp());
@@ -83,9 +84,14 @@ class OverridenMaterialTheme extends StatelessWidget {
       duration: customTheme.transitionDuration,
       child: child,
       data: theme.copyWith(
+          inputDecorationTheme: theme.inputDecorationTheme.copyWith(
+            labelStyle: TextStyle(color: customTheme.primary),
+            hintStyle: TextStyle(color: customTheme.primary),
+            helperStyle: TextStyle(color: customTheme.primary),
+          ),
           scaffoldBackgroundColor: customTheme.background,
           navigationRailTheme: theme.navigationRailTheme.copyWith(backgroundColor: customTheme.secondaryBackground),
-          textTheme: theme.textTheme.apply(
+          textTheme: GoogleFonts.montserratTextTheme(theme.textTheme).apply(
             displayColor: customTheme.primary,
             bodyColor: customTheme.primary,
           ),
@@ -107,7 +113,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return AdaptiveScaffold(
-      title: Text('Hey User'),
+      title: Text('Hey Corentin'),
       actions: [
         Padding(
           padding: const EdgeInsets.all(8.0),

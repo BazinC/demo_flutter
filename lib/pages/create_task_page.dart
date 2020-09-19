@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_demo/color_extention.dart';
 import 'package:responsive_demo/cubit/cubit/status_cubit.dart' as status;
 import 'package:responsive_demo/cubit/cubit/tasks_cubit.dart' as task;
+import 'package:responsive_demo/custom_theme.dart';
 import 'package:responsive_demo/model/status.dart';
 import 'package:responsive_demo/widgets/clickup_appbar_background.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +25,9 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
 
   Widget _buildStatus(List<Status> statusList) {
     return DropdownButtonFormField<Status>(
-      decoration: InputDecoration(labelText: 'Status'),
+      decoration: InputDecoration(
+        labelText: 'Status',
+      ),
       items: (statusList..sort((statusA, statusB) => statusB.orderindex.compareTo(statusA.orderindex)))
           .map((status) => DropdownMenuItem<Status>(
                 child: Row(
@@ -132,6 +135,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 _buildDescription(),
                 SizedBox(height: 100),
                 RaisedButton(
+                  color: CustomTheme.of(context).secondaryBackground,
                   child: BlocConsumer<task.TasksCubit, task.TasksState>(
                       listener: (context, state) {
                         if (state is task.Loaded) {
@@ -144,7 +148,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                           loading: (tasks) => CircularProgressIndicator(),
                           orElse: () => Text(
                                 'Submit',
-                                style: TextStyle(color: Colors.blue, fontSize: 16),
+                                style: Theme.of(context).textTheme.bodyText1,
                               ))),
                   onPressed: () {
                     if (!_formKey.currentState.validate()) {

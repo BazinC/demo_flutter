@@ -60,10 +60,8 @@ class DashboardCard extends StatelessWidget {
       decoration: BoxDecoration(color: theme.secondaryBackground, borderRadius: BorderRadius.circular(4.0), boxShadow: [
         BoxShadow(
           color: theme.secondaryShadow,
-          // blurRadius: 20.0,
           offset: const Offset(5, 5),
           blurRadius: 5,
-          // spreadRadius: 5,
         ),
       ]),
       child: Center(child: child),

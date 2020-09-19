@@ -23,7 +23,8 @@ class TasksCubit extends Cubit<TasksState> {
     try {
       if (!loaded) {
         emit(Loading(tasks));
-        tasks = await _taskRepository.getTasks(listId);
+        tasks = await _taskRepository.getTasks(listId)
+          ..sort(_taskCompare);
         loaded = true;
       }
       emit(Loaded(tasks));
@@ -44,7 +45,7 @@ class TasksCubit extends Cubit<TasksState> {
     try {
       emit(Loading(tasks));
       tasks = await _taskRepository.getTasks(listId, forceRefresh: true);
-      emit(Loaded(tasks));
+      emit(Loaded(tasks..sort(_taskCompare)));
     } on ApiClientException catch (e) {
       emit(Error("Couldn't fetch tasks. (API error. $e)", tasks));
     } on SocketException {
@@ -62,7 +63,9 @@ class TasksCubit extends Cubit<TasksState> {
     try {
       emit(Loading(tasks));
       final task = await _taskRepository.createTask(Task(name: name, description: description, status: status), listId);
-      emit(Loaded(tasks..add(task)));
+      emit(Loaded(tasks
+        ..add(task)
+        ..sort(_taskCompare)));
     } on ApiClientException catch (e) {
       emit(Error("Couldn't create task. (API error. $e)", tasks));
     } on SocketException {
@@ -76,13 +79,22 @@ class TasksCubit extends Cubit<TasksState> {
     }
   }
 
+  int _taskCompare(Task taskB, Task taskA) {
+    if (taskA.status.orderindex == taskB.status.orderindex) {
+      return taskA.orderindex.compareTo(taskB.orderindex);
+    }
+    return taskA.status.orderindex.compareTo(taskB.status.orderindex);
+  }
+
   Future<void> deleteTask(Task task) async {
     try {
       emit(Loading(tasks));
       final taskDeleted = await _taskRepository.deleteTask(task);
       if (taskDeleted) {
         print('${tasks.length}');
-        tasks = tasks..remove(task);
+        tasks = tasks
+          ..remove(task)
+          ..sort(_taskCompare);
         print('${tasks.length}');
 
         emit(Loaded(tasks));
