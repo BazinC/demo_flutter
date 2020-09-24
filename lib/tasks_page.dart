@@ -205,10 +205,14 @@ class _TaskRowState extends State<_TaskRow> with SingleTickerProviderStateMixin 
                   ],
                 ),
                 if (widget.task.children.isNotEmpty)
-                  AnimatedSizeFactor(
-                    fullSized: !folded,
-                    child: _SubTaskList(
-                      subtasks: widget.task.children,
+                  AnimatedOpacity(
+                    duration: defaultAnimationDuration,
+                    opacity: folded ? 1.0 : 0.0,
+                    child: AnimatedSizeFactor(
+                      fullSized: !folded,
+                      child: _SubTaskList(
+                        subtasks: widget.task.children,
+                      ),
                     ),
                   )
               ],
